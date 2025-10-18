@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    /* Fundo preto absoluto */
+    color: #f5f5f5;
+    /* Quase branco para o texto principal */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.section-title {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #f5f5f5;
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    /* Ajuste para o tamanho dos títulos das seções */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #f03e3e;
+    /* Vermelho/vinho do destaque */
+    border-radius: 2px;
+}
+
+/* Cores e estilos do vídeo */
+.text-primary-red {
+    color: #f03e3e;
+    /* Vermelho/vinho */
+}
+
+.bg-primary-red {
+    background-color: #f03e3e;
+}
+
+.social-icon-btn {
+    background-color: #222;
+    /* Fundo mais escuro para os ícones */
+    color: #f5f5f5;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 1px solid #444;
+    /* Borda sutil */
+}
+
+.social-icon-btn:hover {
+    background-color: #f03e3e;
+    color: #000;
+    border-color: #f03e3e;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(240, 62, 62, 0.4);
+}
+
+.btn-hire {
+    background-color: #f03e3e;
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-hire:hover {
+    background-color: #d93636;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(240, 62, 62, 0.4);
+}
+
+.skill-bar-container {
+    background-color: #333;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.skill-bar {
+    background-color: #f03e3e;
+    height: 100%;
+    border-radius: 4px;
+    width: 0%;
+    
+}
+
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-1 {
+    animation-delay: 0.2s;
+}
+
+.fade-in-2 {
+    animation-delay: 0.4s;
+}
+
+.fade-in-3 {
+    animation-delay: 0.6s;
+}
+
+.fade-in-4 {
+    animation-delay: 0.8s;
+}
+
+.fade-in-5 {
+    animation-delay: 1.0s;
+}
+
+.fade-in-6 {
+    animation-delay: 1.2s;
+}
+
+.fade-in-7 {
+    animation-delay: 1.4s;
+}
+
+
+.profile-circle {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: #1a1a1a;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 40px rgba(240, 62, 62, 0.5);
+    margin: 0 auto;
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(10%);
+}
+
+/* Efeito de digitação */
+.typewriter span {
+    display: inline-block;
+    overflow: hidden;
+    border-right: .15em solid #f03e3e;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .05em;
+    animation:
+        typing 3.5s steps(40, end) forwards,
+        blink-caret .75s step-end infinite;
+}
+
+
+.typewriter-delay {
+    animation-delay: 0.8s;
+}
+
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: #f03e3e;
+    }
+}
+
+/* Animação para o botão Hambúrguer virar um "X" */
+#hamburger-button.open .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+#hamburger-button.open .line:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger-button.open .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}

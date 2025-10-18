@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Eduardo - Black & Red</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-black text-white font-['Poppins'] ">
+
+    <header class="p-6 sticky top-0 z-50 bg-black bg-opacity-90 backdrop-blur-sm shadow-lg border-b border-gray-800">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-primary-red fade-in fade-in-1">Edu</h1>
+
+            <nav class="hidden md:flex space-x-8 fade-in fade-in-1">
+                <a href="#home"
+                    class="text-white hover:text-primary-red transition-colors duration-300 font-medium">Home</a>
+                <a href="#about"
+                    class="text-white hover:text-primary-red transition-colors duration-300 font-medium">About</a>
+                <a href="#skills"
+                    class="text-white hover:text-primary-red transition-colors duration-300 font-medium">Skills</a>
+                <a href="#projects"
+                    class="text-white hover:text-primary-red transition-colors duration-300 font-medium">Projects</a>
+                <a href="#contact"
+                    class="text-white hover:text-primary-red transition-colors duration-300 font-medium">Contact</a>
+            </nav>
+
+            <button id="hamburger-button" class="md:hidden z-50 focus:outline-none">
+                <span class="line block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+                <span class="line block w-6 h-0.5 bg-white my-1.5 transition-opacity duration-300 ease-in-out"></span>
+                <span class="line block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+            </button>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full bg-black bg-opacity-95 backdrop-blur-sm">
+            <nav class="flex flex-col items-center p-8 space-y-6">
+                <a href="#home"
+                    class="text-white hover:text-primary-red transition-colors duration-300 font-medium text-lg">Home</a>
+                <a href="#about"
+                    class="text-white hover:text-primary-red transition-colors duration-300 font-medium text-lg">About</a>
+                <a href="#skills"
+                    class="text-white hover:text-primary-red transition-colors duration-300 font-medium text-lg">Skills</a>
+                <a href="#projects"
+                    class="text-white hover:text-primary-red transition-colors duration-300 font-medium text-lg">Projects</a>
+                <a href="#contact"
+                    class="text-white hover:text-primary-red transition-colors duration-300 font-medium text-lg">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8">
+
+        <section id="home" class="min-h-screen flex items-center justify-center py-20">
+            <div class="flex flex-col lg:flex-row items-center lg:justify-between w-full fade-in fade-in-2">
+                <div class="hidden lg:flex lg:w-1/2 justify-center lg:justify-start mb-10 lg:mb-0">
+                    <div class="profile-circle fade-in fade-in-3">
+                        <img src="img/download (6).jpg" alt="Eduardo Oliveira">
+                    </div>
+                </div>
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <p class="text-xl text-gray-400 mb-4 fade-in fade-in-4">Hey I'm Eduardo</p>
+                    <h2 class="text-6xl font-extrabold mb-6">
+                        I'm a <span class="text-primary-red typewriter typewriter-delay"><span>DEVELOPER</span></span>
+                    </h2>
+
+                    <p class="text-lg text-gray-400 mb-8 fade-in fade-in-5">Full-stack developer | Python | Jr</p>
+
+                    <p class="text-lg text-gray-400 max-w-lg mb-8 mx-auto lg:mx-0 fade-in fade-in-6">
+                        Sou um desenvolvedor apaixonado por tecnologia e por criar soluções que impactam positivamente a
+                        vida das pessoas. Com foco em Python e tecnologias web, estou sempre em busca de novos desafios
+                        e oportunidades para aprender e crescer profissionalmente, transformando ideias em código
+                        funcional e elegante.
+                    </p>
+
+                    <div class="flex justify-center lg:justify-start space-x-4 mb-10 fade-in fade-in-7">
+                        <a href="https://github.com/Edu-oliveira7" target="_blank" class="social-icon-btn"><i
+                                class="fab fa-github fa-lg"></i></a>
+                        <a href="https://www.linkedin.com/in/eduardo-oliveira-2354ab359/" target="_blank"
+                            class="social-icon-btn"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        <a href="https://www.instagram.com/eduardozw6/" target="_blank" class="social-icon-btn"><i
+                                class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                    <a href="#contact" class="btn-hire fade-in fade-in-8">Saiba Mais</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script>
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburgerButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+
+        hamburgerButton.classList.toggle('open');
+    });
+
+    const menuLinks = document.querySelectorAll('#mobile-menu a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            hamburgerButton.classList.remove('open');
+        });
+    });
+</script>
+
+</body>
+</html>
+</body>
+
+</html>

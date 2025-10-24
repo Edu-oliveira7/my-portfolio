@@ -1,4 +1,4 @@
-// --- Animação Typewriter ---
+
 const words = ["DEVELOPER", "DESIGNER"];
 const typewriter = document.getElementById("typewriter");
 
@@ -30,7 +30,7 @@ function type() {
 }
 type();
 
-// --- Animação ao Scroll (reveal) ---
+// --- Animação ao Scroll ---
 const reveals = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
@@ -48,4 +48,11 @@ function revealOnScroll() {
 }
 
 window.addEventListener("scroll", revealOnScroll);
-revealOnScroll(); // executa na primeira carga
+revealOnScroll();
+
+const hamburger = document.getElementById('hamburger-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});

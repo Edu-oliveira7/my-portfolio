@@ -1,35 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
 
+/* ===============================
+   CONFIGURAÇÕES GERAIS
+================================ */
 body {
     font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
 }
 
-h1, h2, h3, .font-mono {
+h1, h2, h3, h4, .font-mono {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* --- SCROLL REVEAL ANIMATION --- */
-/* Estado inicial (escondido) */
-.reveal {
-    opacity: 0;
-    transform: translateY(50px); /* Começa 50px para baixo */
-    transition: all 1s cubic-bezier(0.5, 0, 0, 1); /* Transição suave */
-    filter: blur(5px); /* Leve desfoque inicial */
+/* ===============================
+   MELHOR LEITURA NO DESKTOP (Aumentado)
+================================ */
+@media (min-width: 1024px) {
+    body {
+        font-size: 20px; 
+        line-height: 1.8;
+    }
+
+    /* Navegação */
+    nav.hidden.md\:flex {
+        font-size: 1.1rem;
+    }
+
+    /* Parágrafos de descrição */
+    p {
+        font-size: 1.15rem;
+    }
+
+    /* Título Principal (Hero) */
+    h1 {
+        font-size: 5rem;
+        line-height: 1.1;
+    }
+
+    /* Títulos de Seção */
+    h2 {
+        font-size: 3.2rem;
+    }
+
+    /* Títulos de Cards e Instituições */
+    h3 {
+        font-size: 1.8rem;
+    }
+    
+    /* Subtítulos (Cursos/Cargos) */
+    h4 {
+        font-size: 1.5rem;
+    }
 }
 
-/* Estado visível (ativado pelo JS) */
+/* ===============================
+   SCROLL REVEAL (Efeito de Surgimento)
+================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+    filter: blur(5px);
+}
+
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
 }
 
-/* Atrasos para elementos em sequência (Staggering) */
 .delay-100 { transition-delay: 0.1s; }
 .delay-200 { transition-delay: 0.2s; }
 .delay-300 { transition-delay: 0.3s; }
 
-/* --- ANIMAÇÃO DE FLUTUAR (Para a foto) --- */
+/* ===============================
+   ANIMAÇÃO DE FLUTUAR
+================================ */
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-15px); }
@@ -40,9 +86,56 @@ h1, h2, h3, .font-mono {
     animation: float 6s ease-in-out infinite;
 }
 
-/* --- CLASSE PERSONALIZADA PARA O HEADER BLUR --- */
+/* ===============================
+   HEADER & GLASSMORPHISM
+================================ */
 .glass-nav {
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+}
+
+/* ===============================
+   TRILHA / TIMELINE (ESTUDOS)
+================================ */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #00f3ff55, #bc13fe55);
+    transform: translateX(-50%);
+}
+
+/* Ajuste para o marcador da timeline no hover */
+.group:hover .absolute.rounded-full {
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.8);
+}
+
+/* ===============================
+   CUSTOM SCROLLBAR (Opcional)
+================================ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00f3ff;
 }

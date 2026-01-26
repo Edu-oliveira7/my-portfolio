@@ -30,6 +30,16 @@
 </head>
 
 <body class="bg-dark selection:bg-cyan-500 selection:text-black overflow-x-hidden text-white">
+    <!-- INTRO / SPLASH SCREEN -->
+    <div id="intro" class="fixed inset-0 z-[9999] flex items-center justify-center bg-dark">
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white text-center tracking-tight">
+            Bem-vindo ao meu <br />
+            <span class="text-primary drop-shadow-[0_0_25px_rgba(0,243,255,0.7)]">
+                Portfólio
+            </span>
+        </h1>
+    </div>
+
 
     <div id="tsparticles" class="fixed inset-0 -z-10"></div>
 
@@ -129,9 +139,6 @@
                         <a href="https://www.linkedin.com/in/eduardo-oliveira-2354ab359/" target="_blank"
                             class="text-gray-400 hover:text-primary hover:scale-125 transition duration-300"><i
                                 class="fab fa-linkedin-in fa-2x"></i></a>
-                        <a href="https://www.instagram.com/eduardozw6/" target="_blank"
-                            class="text-gray-400 hover:text-secondary hover:scale-125 transition duration-300"><i
-                                class="fab fa-instagram fa-2x"></i></a>
                     </div>
                     <a href="#projects"
                         class="px-8 py-3 bg-primary hover:bg-cyan-400 text-black font-bold rounded-lg transition shadow-[0_0_20px_rgba(6,182,212,0.4)] inline-block hover:-translate-y-1 w-full md:w-auto">Ver
@@ -312,47 +319,63 @@
         <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent opacity-30 my-4"></div>
 
         <section id="academic" class="py-16 md:py-24 px-6 relative">
-            <div class="container mx-auto max-w-6xl">
+            <div class="container mx-auto max-w-5xl">
                 <div class="text-center lg:text-left mb-16 reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Estudos & Certificados</h2>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Estudos & Certificados</h2>
                     <div
                         class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto lg:mx-0 rounded-full mb-6">
                     </div>
-                    <p class="text-gray-400 max-w-2xl mx-auto lg:mx-0">Minha jornada de aprendizado contínuo e
-                        especializações técnicas.</p>
+                    <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto lg:mx-0">
+                        Minha trajetória acadêmica e especializações.
+                    </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div
-                        class="reveal delay-200 group flex flex-col bg-[#121212] border border-white/10 rounded-2xl overflow-hidden hover:border-primary hover:shadow-[0_10px_40px_-10px_rgba(0,243,255,0.2)] transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="relative h-40 bg-gradient-to-br from-[#0b1b32] to-black overflow-hidden border-b border-white/5 flex items-center justify-center">
-                            <div class="absolute inset-0 bg-cyan-500/5 group-hover:bg-cyan-500/10 transition"></div>
-                            <i
-                                class="fa-solid fa-award text-6xl text-cyan-400/50 group-hover:text-cyan-400 group-hover:scale-110 transition duration-500"></i>
+
+                <div class="relative border-l-2 border-white/10 ml-4 md:ml-6 space-y-12">
+                    
+                    <div class="relative pl-8 md:pl-12 reveal group">
+                        <div class="absolute -left-[9px] top-1 w-5 h-5 bg-black rounded-full border-4 border-primary shadow-[0_0_15px_rgba(0,243,255,0.5)] transition-all group-hover:scale-125 group-hover:bg-primary"></div>
+                        
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-2">
+                            <h3 class="text-2xl md:text-3xl font-bold text-white group-hover:text-primary transition-colors">
+                                IFRN - Instituto Federal do RN
+                            </h3>
+                            <span class="text-sm md:text-base text-gray-500 font-mono border border-white/10 px-3 py-1 rounded bg-white/5">
+                                2022 - 2026
+                            </span>
                         </div>
-                        <div class="p-6 flex-1 flex flex-col">
-                            <div class="flex justify-between items-start mb-3">
-                                <span
-                                    class="text-[10px] font-bold tracking-wider text-primary bg-cyan-400/10 px-2 py-1 rounded border border-cyan-400/20">ALURA</span>
-                                <span class="text-xs text-gray-500 border border-white/10 px-2 py-1 rounded">Fev
-                                    2025</span>
-                            </div>
-                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                                Imersão Front-End 2ª Edição</h3>
-                            <p class="text-gray-400 text-sm mb-6 flex-1">Curso intensivo focado em tecnologias web
-                                modernas.</p>
-                            <div class="mt-auto flex items-center justify-between pt-4 border-t border-white/5">
-                                <span class="text-xs text-gray-500 flex items-center gap-1"><i
-                                        class="fa-regular fa-clock text-primary"></i> 5 Horas</span>
-                                <a href="https://drive.google.com/file/d/1IFx2Wfj_-LpIhGsJMvBmftXRZxikcsxH/view?usp=drive_link"
-                                    target="_blank"
-                                    class="text-xs font-bold text-white bg-cyan-600 hover:bg-cyan-500 px-3 py-2 rounded transition flex items-center gap-2 shadow-lg shadow-cyan-500/20">
-                                    Ver Credencial
-                                </a>
-                            </div>
-                        </div>
+                        
+                        <h4 class="text-xl md:text-2xl text-gray-300 font-medium mb-4">
+                            Técnico em Informática para Internet / Ensino Médio Integrado
+                        </h4>
+                        
+                        <p class="text-gray-400 text-lg leading-relaxed max-w-3xl">
+                            Formação técnica sólida com foco em desenvolvimento de sistemas, lógica de programação e infraestrutura. 
+                            Durante esse período, desenvolvi base forte em algoritmos, banco de dados e programação orientada a objetos.
+                        </p>
                     </div>
-                </div>
+
+                    <div class="relative pl-8 md:pl-12 reveal delay-200 group">
+                        <div class="absolute -left-[9px] top-1 w-5 h-5 bg-black rounded-full border-4 border-purple-500 shadow-[0_0_15px_rgba(188,19,254,0.5)] transition-all group-hover:scale-125 group-hover:bg-purple-500"></div>
+                        
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-2">
+                            <h3 class="text-2xl md:text-3xl font-bold text-white group-hover:text-secondary transition-colors">
+                                Alura - Imersão Front-End
+                            </h3>
+                            <span class="text-sm md:text-base text-gray-500 font-mono border border-white/10 px-3 py-1 rounded bg-white/5">
+                                Fev 2025
+                            </span>
+                        </div>
+
+                        <h4 class="text-xl md:text-2xl text-gray-300 font-medium mb-4">
+                            Curso Intensivo de Desenvolvimento Web
+                        </h4>
+                        
+                        <p class="text-gray-400 text-lg leading-relaxed max-w-3xl mb-4">
+                            Aprofundamento em HTML, CSS e JavaScript modernos, criando projetos práticos e responsivos focados na experiência do usuário.
+                        </p>
+                    </div>
+
+                    </div>
             </div>
         </section>
 
@@ -377,10 +400,6 @@
                         <i class="fab fa-github text-2xl text-gray-400 group-hover:text-white transition-colors"></i>
                     </a>
 
-                    <a href="https://www.instagram.com/eduardozw6/" target="_blank"
-                        class="group relative w-16 h-16 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 transition-all duration-300 hover:-translate-y-2 hover:border-pink-500 hover:shadow-[0_0_15px_rgba(236,72,153,0.3)] delay-300 reveal">
-                        <i class="fab fa-instagram text-2xl text-gray-400 group-hover:text-white transition-colors"></i>
-                    </a>
                 </div>
             </div>
         </section>
@@ -395,6 +414,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>

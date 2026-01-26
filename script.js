@@ -169,3 +169,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+/* ==========================================
+   5. INTRO ANIMADA (ANTES DO SITE)
+========================================== */
+window.addEventListener("load", () => {
+    const tl = gsap.timeline();
+
+    tl.from("#intro h1", {
+        opacity: 0,
+        y: 50,
+        duration: 1.2,
+        ease: "power4.out"
+    })
+    .to("#intro h1", {
+        opacity: 0,
+        y: -30,
+        duration: 0.6,
+        delay: 0.8,
+        ease: "power2.in"
+    })
+    .to("#intro", {
+        opacity: 0,
+        duration: 0.6
+    })
+    .set("#intro", { display: "none" })
+    .to("#site-content", {
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out"
+    });
+});

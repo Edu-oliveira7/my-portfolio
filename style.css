@@ -1,141 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+/* Importação de fontes para um ar mais moderno */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* ===============================
-   CONFIGURAÇÕES GERAIS
-================================ */
+:root {
+    --primary: #00f3ff;
+    --secondary: #bc13fe;
+    --dark: #050505;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--dark);
     scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, .font-mono {
+.font-mono {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* ===============================
-   MELHOR LEITURA NO DESKTOP (Aumentado)
-================================ */
-@media (min-width: 1024px) {
-    body {
-        font-size: 20px; 
-        line-height: 1.8;
-    }
-
-    /* Navegação */
-    nav.hidden.md\:flex {
-        font-size: 1.1rem;
-    }
-
-    /* Parágrafos de descrição */
-    p {
-        font-size: 1.15rem;
-    }
-
-    /* Título Principal (Hero) */
-    h1 {
-        font-size: 5rem;
-        line-height: 1.1;
-    }
-
-    /* Títulos de Seção */
-    h2 {
-        font-size: 3.2rem;
-    }
-
-    /* Títulos de Cards e Instituições */
-    h3 {
-        font-size: 1.8rem;
-    }
-    
-    /* Subtítulos (Cursos/Cargos) */
-    h4 {
-        font-size: 1.5rem;
-    }
+/* --- UI: GLASSMORPHISM E REFINAMENTO --- */
+header .bg-black\/70 {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
-/* ===============================
-   SCROLL REVEAL (Efeito de Surgimento)
-================================ */
+/* --- UX: ANIMAÇÕES DE REVEAL AO ROLAR --- */
 .reveal {
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s cubic-bezier(0.5, 0, 0, 1);
-    filter: blur(5px);
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
 }
 
-.delay-100 { transition-delay: 0.1s; }
-.delay-200 { transition-delay: 0.2s; }
-.delay-300 { transition-delay: 0.3s; }
+/* Delay gradual para itens em grid */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
 
-/* ===============================
-   ANIMAÇÃO DE FLUTUAR
-================================ */
+/* --- UI: EFEITO FLOATING NA IMAGEM --- */
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(1deg); }
 }
-
 .animate-float {
     animation: float 6s ease-in-out infinite;
 }
 
-/* ===============================
-   HEADER & GLASSMORPHISM
-================================ */
-.glass-nav {
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-
-/* ===============================
-   TRILHA / TIMELINE (ESTUDOS)
-================================ */
-.timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to bottom, #00f3ff55, #bc13fe55);
-    transform: translateX(-50%);
-}
-
-/* Ajuste para o marcador da timeline no hover */
-.group:hover .absolute.rounded-full {
-    box-shadow: 0 0 20px rgba(0, 243, 255, 0.8);
-}
-
-/* ===============================
-   CUSTOM SCROLLBAR (Opcional)
-================================ */
+/* --- UI: CUSTOM SCROLLBAR --- */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
-
 ::-webkit-scrollbar-track {
-    background: #050505;
+    background: var(--dark);
 }
-
 ::-webkit-scrollbar-thumb {
     background: #222;
     border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-    background: #00f3ff;
+    background: var(--primary);
+}
+
+/* Melhoria no Typewriter cursor */
+#typewriter::after {
+    content: '';
+    border-right: 2px solid var(--primary);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }

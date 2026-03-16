@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ==================== MOBILE MENU TOGGLE ====================
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -58,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     setTimeout(type, 1000);
 
-    // ==================== SCROLL REVEAL (INTERSECTION OBSERVER) ====================
+    // ==================== SCROLL REVEAL  ====================
     const revealOptions = {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
@@ -74,8 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, revealOptions);
 
     document.querySelectorAll('.reveal, .fade-in-left, .fade-in-right').forEach(el => {
-        // No mobile, o CSS já força opacity 1, mas mantemos o observer ativo 
-        // caso a tela seja redimensionada.
         revealObserver.observe(el);
     });
 

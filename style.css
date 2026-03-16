@@ -1,77 +1,63 @@
-/* Importação de fontes para um ar mais moderno */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap');
-
-:root {
-    --primary: #00f3ff;
-    --secondary: #bc13fe;
-    --dark: #050505;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px); 
+        filter: blur(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
 }
 
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: var(--dark);
-    scroll-behavior: smooth;
-}
-
-.font-mono {
-    font-family: 'JetBrains Mono', monospace;
-}
-
-/* --- UI: GLASSMORPHISM E REFINAMENTO --- */
-header .bg-black\/70 {
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-}
-
-/* --- UX: ANIMAÇÕES DE REVEAL AO ROLAR --- */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Delay gradual para itens em grid */
-.delay-100 { transition-delay: 100ms; }
-.delay-200 { transition-delay: 200ms; }
-.delay-300 { transition-delay: 300ms; }
-
-/* --- UI: EFEITO FLOATING NA IMAGEM --- */
 @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(1deg); }
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
 }
+
 .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite; 
 }
 
-/* --- UI: CUSTOM SCROLLBAR --- */
-::-webkit-scrollbar {
-    width: 6px;
-}
-::-webkit-scrollbar-track {
-    background: var(--dark);
-}
-::-webkit-scrollbar-thumb {
-    background: #222;
-    border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: var(--primary);
+
+.reveal, .fade-in-left, .fade-in-right {
+    opacity: 0;
+    will-change: transform, opacity;
+    
+    transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Melhoria no Typewriter cursor */
-#typewriter::after {
-    content: '';
-    border-right: 2px solid var(--primary);
-    animation: blink 0.7s infinite;
+.reveal { transform: translateY(60px); }
+.fade-in-left { transform: translateX(-60px); }
+.fade-in-right { transform: translateX(60px); }
+
+
+.reveal.active, 
+.fade-in-left.active, 
+.fade-in-right.active {
+    opacity: 1;
+    transform: translate(0);
 }
 
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+.delay-100 { transition-delay: 200ms; }
+.delay-200 { transition-delay: 400ms; }
+.delay-300 { transition-delay: 600ms; }
+.delay-400 { transition-delay: 800ms; }
+
+
+.hover-scale {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-scale:hover {
+    transform: scale(1.03); 
+}
+
+
+@media (max-width: 768px) {
+    .reveal, .fade-in-left, .fade-in-right {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
 }

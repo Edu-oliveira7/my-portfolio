@@ -4,24 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduardo Oliveira | Portfólio</title>
-
+    <title>Portfólio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="img/pc.jpg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/pc.jpg" type="image/x-icon">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        primary: '#00f3ff', /* Ciano Neon */
-                        secondary: '#bc13fe', /* Roxo Neon */
-                        dark: '#050505'
-                    },
-                    screens: {
-                        'xs': '375px',
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
@@ -29,513 +27,408 @@
     </script>
 </head>
 
-<body class="bg-dark selection:bg-cyan-500 selection:text-black overflow-x-hidden text-white">
-    <!-- INTRO / SPLASH SCREEN -->
-    <div id="intro" class="fixed inset-0 z-[9999] flex items-center justify-center bg-dark">
-        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white text-center tracking-tight">
-            Bem-vindo ao meu <br />
-            <span class="text-primary drop-shadow-[0_0_25px_rgba(0,243,255,0.7)]">
-                Portfólio
-            </span>
-        </h1>
-    </div>
+<body class="overflow-x-hidden selection:bg-black selection:text-white font-sans bg-white">
 
+    <header class="fixed top-4 sm:top-6 left-0 right-0 mx-auto w-[95%] max-w-6xl z-50">
+        <nav
+            class="bg-white/90 backdrop-blur-md border border-gray-200 shadow-lg rounded-full px-4 py-3 flex items-center justify-between relative">
 
-    <div id="tsparticles" class="fixed inset-0 -z-10"></div>
+            <div class="flex items-center gap-2 shrink-0">
+                <span class="text-xl font-black tracking-tighter text-black">
+                    Edu<span class="text-gray-400">Dev</span>
+                </span>
+            </div>
 
-    <header
-        class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] md:w-full md:max-w-5xl z-50 transition-all duration-300">
-        <div
-            class="bg-black/70 backdrop-blur-md border border-white/10 rounded-full shadow-lg shadow-cyan-500/5 relative z-50">
-            <div class="flex justify-between items-center px-6 py-3">
-
-                <a href="#" class="text-xl font-bold tracking-tighter text-white hover:text-gray-300 transition-colors">
-                    Edu
+            <div class="hidden md:flex items-center gap-2">
+                <a href="#home"
+                    class="nav-link active-nav bg-black text-white px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2">
+                    Home
                 </a>
+                <a href="#about"
+                    class="nav-link text-gray-600 hover:text-black px-3 py-2 text-sm font-medium transition-colors">Sobre</a>
+                <a href="#skills"
+                    class="nav-link text-gray-600 hover:text-black px-3 py-2 text-sm font-medium transition-colors">Skills</a>
+                <a href="#projects"
+                    class="nav-link text-gray-600 hover:text-black px-3 py-2 text-sm font-medium transition-colors">Projetos</a>
+                <a href="#services"
+                    class="nav-link text-gray-600 hover:text-black px-3 py-2 text-sm font-medium transition-colors">Serviços</a>
+                <a href="#contact"
+                    class="nav-link text-gray-600 hover:text-black px-3 py-2 text-sm font-medium transition-colors">Contato</a>
+            </div>
 
-                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
-                    <a href="#home" class="hover:text-white transition-colors relative group">Home<span
-                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
-                    <a href="#about" class="hover:text-white transition-colors relative group">Sobre<span
-                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
-                    <a href="#skills" class="hover:text-white transition-colors relative group">Skills<span
-                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
-                    <a href="#projects" class="hover:text-white transition-colors relative group">Projetos<span
-                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
-                    <a href="#academic" class="hover:text-white transition-colors relative group">Estudos<span
-                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
-                </nav>
-
-                <div class="hidden md:flex items-center gap-4">
-                    <a href="#contact"
-                        class="bg-white text-black hover:bg-gray-200 text-xs px-5 py-2.5 rounded-full transition font-bold tracking-wide hover:shadow-[0_0_15px_rgba(255,255,255,0.4)]">
-                        Contato
-                    </a>
-                </div>
-
-                <button id="hamburger-button"
-                    class="md:hidden text-white focus:outline-none p-2 transition-transform duration-300">
-                    <i class="fa-solid fa-bars text-xl"></i>
+            <div class="flex items-center gap-3">
+                <button id="mobile-menu-btn"
+                    class="md:hidden bg-black text-white w-9 h-9 rounded-full flex items-center justify-center transition-transform active:scale-95">
+                    <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
-        </div>
 
-        <div id="mobile-menu"
-            class="absolute top-[120%] left-0 w-full bg-[#101010]/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl shadow-cyan-500/10 p-6 flex-col items-center space-y-6 hidden opacity-0 transform scale-95 transition-all duration-300 origin-top z-50">
-            <nav class="flex flex-col items-center space-y-4 w-full">
+            <div id="mobile-menu"
+                class="hidden absolute top-full left-0 right-0 mt-3 bg-white border border-gray-200 shadow-2xl rounded-2xl flex flex-col p-4 gap-2 origin-top transition-all">
                 <a href="#home"
-                    class="mobile-link text-lg font-medium text-gray-300 hover:text-primary hover:bg-white/5 w-full text-center py-2 rounded-lg transition-all">Home</a>
+                    class="mobile-link bg-gray-50 text-black px-4 py-3 rounded-xl text-sm font-bold flex items-center gap-3">
+                    <i class="fa-solid fa-house w-5"></i> Home
+                </a>
                 <a href="#about"
-                    class="mobile-link text-lg font-medium text-gray-300 hover:text-primary hover:bg-white/5 w-full text-center py-2 rounded-lg transition-all">Sobre</a>
+                    class="mobile-link text-gray-600 hover:bg-gray-50 px-4 py-3 rounded-xl text-sm font-medium flex items-center gap-3">
+                    <i class="fa-solid fa-user w-5"></i> Sobre
+                </a>
                 <a href="#skills"
-                    class="mobile-link text-lg font-medium text-gray-300 hover:text-primary hover:bg-white/5 w-full text-center py-2 rounded-lg transition-all">Skills</a>
+                    class="mobile-link text-gray-600 hover:bg-gray-50 px-4 py-3 rounded-xl text-sm font-medium flex items-center gap-3">
+                    <i class="fa-solid fa-code w-5"></i> Skills
+                </a>
                 <a href="#projects"
-                    class="mobile-link text-lg font-medium text-gray-300 hover:text-primary hover:bg-white/5 w-full text-center py-2 rounded-lg transition-all">Projetos</a>
-                <a href="#academic"
-                    class="mobile-link text-lg font-medium text-gray-300 hover:text-primary hover:bg-white/5 w-full text-center py-2 rounded-lg transition-all">Estudos</a>
+                    class="mobile-link text-gray-600 hover:bg-gray-50 px-4 py-3 rounded-xl text-sm font-medium flex items-center gap-3">
+                    <i class="fa-solid fa-folder-open w-5"></i> Projetos
+                </a>
+                <a href="#services"
+                    class="mobile-link text-gray-600 hover:bg-gray-50 px-4 py-3 rounded-xl text-sm font-medium flex items-center gap-3">
+                    <i class="fa-solid fa-laptop-code w-5"></i> Serviços
+                </a>
                 <a href="#contact"
-                    class="mobile-link text-lg font-medium text-gray-300 hover:text-primary hover:bg-white/5 w-full text-center py-2 rounded-lg transition-all">Contato</a>
-            </nav>
-
-            <div class="flex gap-6 border-t border-white/10 pt-4 w-full justify-center">
-                <a href="https://github.com/Edu-oliveira7" target="_blank"
-                    class="text-gray-400 hover:text-white text-2xl transition-transform hover:scale-110"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/eduardo-oliveira-2354ab359/" target="_blank"
-                    class="text-gray-400 hover:text-white text-2xl transition-transform hover:scale-110"><i
-                        class="fab fa-linkedin-in"></i></a>
+                    class="mobile-link text-gray-600 hover:bg-gray-50 px-4 py-3 rounded-xl text-sm font-medium flex items-center gap-3">
+                    <i class="fa-solid fa-envelope w-5"></i> Contato
+                </a>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <div id="menu-backdrop"
-        class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"></div>
+    <main id="home" class="min-h-screen flex items-center justify-center pt-32 pb-12 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center w-full">
+            <div class="flex flex-col items-center lg:items-start text-center lg:text-left fade-in-left">
+                <div
+                    class="bg-gray-100 border border-gray-200 text-gray-700 text-xs font-semibold px-4 py-1.5 rounded-full flex items-center gap-2 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Disponível para novos projetos
+                </div>
 
-    <main>
-        <section id="home"
-            class="min-h-screen flex items-center justify-center pt-32 pb-12 px-6 relative overflow-hidden">
-            <div
-                class="container mx-auto flex flex-col-reverse lg:flex-row items-center lg:justify-between w-full gap-12 relative z-10">
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.1] text-black">
+                    Olá, eu sou <br> Eduardo Oliveira
+                </h1>
 
-                <div class="lg:w-1/2 text-center lg:text-left reveal z-10 mt-8 lg:mt-0 lg:pl-24">
+                <h2 class="text-2xl sm:text-4xl font-serif font-bold mt-4 text-black h-12 flex items-center">
+                    <span id="typewriter"></span><span class="animate-pulse ml-1">|</span>
+                </h2>
 
-                    <p class="text-base md:text-xl text-gray-400 mb-4 font-medium tracking-wide">Hey I'm Eduardo</p>
-                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight text-white">
-                        I'm a <br class="md:hidden" /> <span id="typewriter"
-                            class="text-primary drop-shadow-[0_0_15px_rgba(0,243,255,0.4)]"></span><span
-                            class="animate-pulse text-primary"></span><span class="animate-pulse text-primary"></span>
-                    </h1>
-                    <div
-                        class="text-xs md:text-lg text-gray-300 mb-8 font-mono bg-white/5 inline-block px-4 py-2 rounded border border-white/10 backdrop-blur-md">
-                        Full-stack developer | Python | Jr
-                    </div>
-                    <p class="text-sm md:text-lg text-gray-400 max-w-lg mb-8 mx-auto lg:mx-0 leading-relaxed">
-                        Sou um desenvolvedor apaixonado por tecnologia e por criar soluções que impactam positivamente a
-                        vida das pessoas.
-                    </p>
-                    <div class="flex justify-center lg:justify-start space-x-6 mb-10">
+                <p class="text-gray-500 text-base md:text-lg mt-6 max-w-lg leading-relaxed font-medium">
+                    Desenvolvo sistemas inteligentes e sites de alta performance que conectam sua marca aos clientes.
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-8">
+                    <a href="#contact"
+                        class="bg-black text-white px-7 py-3 rounded-xl text-sm font-semibold hover:bg-gray-800 transition-all hover:-translate-y-0.5 flex items-center gap-2">
+                        Vamos conversar?
+                    </a>
+                    <div class="flex gap-4 ml-2">
                         <a href="https://github.com/Edu-oliveira7" target="_blank"
-                            class="text-gray-400 hover:text-white hover:scale-125 transition duration-300"><i
-                                class="fab fa-github fa-2x"></i></a>
+                            class="text-gray-600 hover:text-black transition-all text-2xl"><i
+                                class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/eduardo-oliveira-2354ab359/" target="_blank"
-                            class="text-gray-400 hover:text-primary hover:scale-125 transition duration-300"><i
-                                class="fab fa-linkedin-in fa-2x"></i></a>
-                    </div>
-                    <a href="#projects"
-                        class="px-8 py-3 bg-primary hover:bg-cyan-400 text-black font-bold rounded-lg transition shadow-[0_0_20px_rgba(6,182,212,0.4)] inline-block hover:-translate-y-1 w-full md:w-auto">Ver
-                        Projetos</a>
-                </div>
-
-                <div class="hidden lg:flex lg:w-1/2 justify-center relative reveal delay-200">
-                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[450px] lg:h-[450px] animate-float">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-purple-600 rounded-full blur-[60px] md:blur-[90px] opacity-30 animate-pulse">
-                        </div>
-                        <div
-                            class="w-full h-full rounded-full overflow-hidden border-2 border-white/10 relative z-10 hover:scale-105 transition duration-700 shadow-2xl">
-                            <img src="img/download (6).jpg"
-                                onerror="this.src='https://via.placeholder.com/400x400/000000/FFFFFF?text=Edu'"
-                                alt="Eduardo Oliveira" class="w-full h-full object-cover">
-                        </div>
+                            class="text-gray-600 hover:text-blue-600 transition-all text-2xl"><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent opacity-30 my-4"></div>
-
-        <section id="about" class="py-16 md:py-24 px-6 relative overflow-hidden bg-white/5 backdrop-blur-sm">
-            <div
-                class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl bg-primary/5 blur-[120px] rounded-full pointer-events-none opacity-20">
-            </div>
-            <div class="container mx-auto max-w-5xl relative z-10">
-                <div class="text-center lg:text-left mb-8 relative reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white inline-block relative pb-2">
-                        Sobre Mim
-                        <span
-                            class="absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 w-12 h-1 bg-primary rounded-full shadow-[0_0_10px_#00f3ff]"></span>
-                    </h2>
-                </div>
-                <p
-                    class="text-gray-300 leading-relaxed text-base md:text-lg max-w-3xl text-center lg:text-left mx-auto lg:mx-0 reveal delay-100">
-                    Sou um desenvolvedor movido pela paixão por tecnologia e pelo aprendizado contínuo. Foco em criar
-                    soluções web funcionais utilizando Python e Django, enquanto aprimoro minhas bases em HTML, CSS,
-                    JavaScript e Tailwind CSS.
-                    Busco evoluir constantemente através de estudos práticos, projetos reais e da exploração de novas
-                    ferramentas.
-                </p>
-            </div>
-        </section>
-
-        <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent opacity-30 my-4"></div>
-
-        <section id="skills" class="py-16 md:py-24 px-6">
-            <div class="container mx-auto max-w-5xl">
-                <div class="text-center lg:text-left mb-12 reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Tech Stack</h2>
-                    <div
-                        class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto lg:mx-0 rounded-full mb-6">
-                    </div>
-                    <p class="text-gray-400">Ferramentas e tecnologias que utilizo</p>
-                </div>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 mx-auto">
-                    <div
-                        class="reveal delay-100 group flex flex-col items-center gap-3 p-4 rounded-xl border border-white/10 bg-[#161616]/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_0_20px_rgba(0,243,255,0.2)]">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                            alt="HTML5"
-                            class="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-110">
-                        <span class="text-xs md:text-sm font-medium text-gray-400 group-hover:text-white">HTML5</span>
-                    </div>
-
-                    <div
-                        class="reveal delay-100 group flex flex-col items-center gap-3 p-4 rounded-xl border border-white/10 bg-[#161616]/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_0_20px_rgba(0,243,255,0.2)]">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"
-                            class="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-110">
-                        <span class="text-xs md:text-sm font-medium text-gray-400 group-hover:text-white">CSS3</span>
-                    </div>
-
-                    <div
-                        class="reveal delay-200 group flex flex-col items-center gap-3 p-4 rounded-xl border border-white/10 bg-[#161616]/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_0_20px_rgba(0,243,255,0.2)]">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                            alt="JS"
-                            class="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-110">
-                        <span
-                            class="text-xs md:text-sm font-medium text-gray-400 group-hover:text-white">JavaScript</span>
-                    </div>
-
-                    <div
-                        class="reveal delay-200 group flex flex-col items-center gap-3 p-4 rounded-xl border border-white/10 bg-[#161616]/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_0_20px_rgba(0,243,255,0.2)]">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                            alt="React"
-                            class="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-110">
-                        <span class="text-xs md:text-sm font-medium text-gray-400 group-hover:text-white">React</span>
-                    </div>
-
-                    <div
-                        class="reveal delay-200 group flex flex-col items-center gap-3 p-4 rounded-xl border border-white/10 bg-[#161616]/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_0_20px_rgba(0,243,255,0.2)]">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                            alt="Python"
-                            class="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-110">
-                        <span class="text-xs md:text-sm font-medium text-gray-400 group-hover:text-white">Python</span>
-                    </div>
-
-                    <div
-                        class="reveal delay-300 group flex flex-col items-center gap-3 p-4 rounded-xl border border-white/10 bg-[#161616]/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_0_20px_rgba(0,243,255,0.2)]">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
-                            alt="Django"
-                            class="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-110 invert opacity-90">
-                        <span class="text-xs md:text-sm font-medium text-gray-400 group-hover:text-white">Django</span>
-                    </div>
-
-                    <div
-                        class="reveal delay-300 group flex flex-col items-center gap-3 p-4 rounded-xl border border-white/10 bg-[#161616]/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_0_20px_rgba(0,243,255,0.2)]">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
-                            alt="Tailwind"
-                            class="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-110">
-                        <span
-                            class="text-xs md:text-sm font-medium text-gray-400 group-hover:text-white">Tailwind</span>
-                    </div>
-
-                    <div
-                        class="reveal delay-100 group flex flex-col items-center gap-3 p-4 rounded-xl border border-white/10 bg-[#161616]/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_0_20px_rgba(0,243,255,0.2)]">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                            alt="MySQL"
-                            class="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-110">
-                        <span class="text-xs md:text-sm font-medium text-gray-400 group-hover:text-white">MySQL</span>
-                    </div>
-
-                    <div
-                        class="reveal delay-200 group flex flex-col items-center gap-3 p-4 rounded-xl border border-white/10 bg-[#161616]/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_0_20px_rgba(0,243,255,0.2)]">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
-                            alt="Vercel"
-                            class="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-110 invert">
-                        <span class="text-xs md:text-sm font-medium text-gray-400 group-hover:text-white">Vercel</span>
-                    </div>
-
-                    <div
-                        class="reveal delay-200 group flex flex-col items-center gap-3 p-4 rounded-xl border border-white/10 bg-[#161616]/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:shadow-[0_0_20px_rgba(0,243,255,0.2)]">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                            alt="Figma"
-                            class="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-110">
-                        <span class="text-xs md:text-sm font-medium text-gray-400 group-hover:text-white">Figma</span>
-                    </div>
+            <div class="hidden lg:flex justify-center lg:justify-end relative fade-in-right">
+                <div
+                    class="relative w-full max-w-md aspect-square bg-gray-50 rounded-[2rem] border-2 border-gray-100 overflow-hidden shadow-2xl animate-float">
+                    <img src="img/download (6).jpg" alt="Eduardo Oliveira"
+                        class="w-full h-full object-cover object-bottom"
+                        onerror="this.src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop'">
                 </div>
             </div>
-        </section>
-
-        <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent opacity-30 my-4"></div>
-
-        <section id="projects" class="py-16 md:py-24 px-6 relative">
-            <div class="container mx-auto max-w-6xl">
-
-                <div class="text-center lg:text-left mb-12 md:mb-16 reveal">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
-                        Projetos Recentes
-                    </h2>
-                    <div
-                        class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto lg:mx-0 rounded-full mb-6">
-                    </div>
-                    <p class="text-gray-400 max-w-2xl mx-auto lg:mx-0">
-                        Aplicações reais desenvolvidas com foco em performance e experiência do usuário.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <div
-                        class="reveal delay-200 group flex flex-col bg-[#121212] border border-white/10 rounded-2xl overflow-hidden hover:border-primary hover:shadow-[0_10px_40px_-10px_rgba(0,243,255,0.2)] transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="relative h-48 bg-gradient-to-br from-gray-800 to-black overflow-hidden border-b border-white/5">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <i
-                                    class="fa-solid fa-map-location-dot text-6xl text-white/10 group-hover:text-cyan-500/30 transition duration-500 transform group-hover:scale-110"></i>
-                            </div>
-                            <div
-                                class="absolute top-4 right-4 bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded border border-green-500/30 font-bold backdrop-blur-md">
-                                ONLINE
-                            </div>
-                        </div>
-
-                        <div class="p-6 flex-1 flex flex-col">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                                Mapa da Jornada
-                            </h3>
-                            <p class="text-gray-400 text-sm mb-4 line-clamp-3">
-                                Ajuda quem se sente perdido com o excesso de informações a escolher uma carreira com
-                                base em fatos e não em “palpites”.
-                            </p>
-
-                            <div class="flex flex-wrap gap-2 mb-6 mt-auto">
-                                <span
-                                    class="text-xs font-medium text-gray-300 bg-white/5 px-2 py-1 rounded border border-white/5">Python</span>
-                                <span
-                                    class="text-xs font-medium text-gray-300 bg-white/5 px-2 py-1 rounded border border-white/5">Django</span>
-                                <span
-                                    class="text-xs font-medium text-gray-300 bg-white/5 px-2 py-1 rounded border border-white/5">Tailwind
-                                    CSS</span>
-                            </div>
-
-                            <a href="http://thierry12.pythonanywhere.com" target="_blank"
-                                class="flex items-center justify-center gap-2 p-3 rounded-xl border border-white/10 bg-[#161616]/80 text-sm font-medium text-gray-400 transition-all duration-300 hover:border-primary hover:text-white hover:shadow-[0_0_15px_rgba(0,243,255,0.2)]">
-                                Acessar Projeto <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div
-                        class="reveal delay-300 group flex flex-col bg-[#121212] border border-white/10 rounded-2xl overflow-hidden hover:border-primary hover:shadow-[0_10px_40px_-10px_rgba(0,243,255,0.2)] transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="relative h-48 bg-gradient-to-br from-gray-800 to-black overflow-hidden border-b border-white/5">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <i
-                                    class="fa-solid fa-layer-group text-6xl text-white/10 group-hover:text-cyan-500/30 transition duration-500 transform group-hover:scale-110"></i>
-                            </div>
-                            <div
-                                class="absolute top-4 right-4 bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded border border-green-500/30 font-bold backdrop-blur-md">
-                                ONLINE
-                            </div>
-                        </div>
-
-                        <div class="p-6 flex-1 flex flex-col">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                                Projeto UI/UX
-                            </h3>
-                            <p class="text-gray-400 text-sm mb-4 line-clamp-3">
-                                Projeto focado em UI/UX moderno, explorando hierarquia visual e tipografia aplicada a um
-                                layout real.
-                            </p>
-
-                            <div class="flex flex-wrap gap-2 mb-6 mt-auto">
-                                <span
-                                    class="text-xs font-medium text-gray-300 bg-white/5 px-2 py-1 rounded border border-white/5">UI
-                                    Design</span>
-                                <span
-                                    class="text-xs font-medium text-gray-300 bg-white/5 px-2 py-1 rounded border border-white/5">UX</span>
-                                <span
-                                    class="text-xs font-medium text-gray-300 bg-white/5 px-2 py-1 rounded border border-white/5">Frontend</span>
-                            </div>
-
-                            <a href="https://edu-oliveira7.github.io/Projeto-UI-UX/" target="_blank"
-                                class="flex items-center justify-center gap-2 p-3 rounded-xl border border-white/10 bg-[#161616]/80 text-sm font-medium text-gray-400 transition-all duration-300 hover:border-primary hover:text-white hover:shadow-[0_0_15px_rgba(0,243,255,0.2)]">
-                                Acessar Projeto <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div
-                        class="reveal delay-300 group flex flex-col bg-[#121212] border border-white/10 rounded-2xl overflow-hidden hover:border-primary hover:shadow-[0_10px_40px_-10px_rgba(0,243,255,0.2)] transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="relative h-48 bg-gradient-to-br from-gray-800 to-black overflow-hidden border-b border-white/5">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <i
-                                    class="fa-solid fa-flag-checkered text-6xl text-white/10 group-hover:text-cyan-500/30 transition duration-500 transform group-hover:scale-110"></i>
-                            </div>
-                            <div
-                                class="absolute top-4 right-4 bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded border border-green-500/30 font-bold backdrop-blur-md">
-                                ONLINE
-                            </div>
-                        </div>
-
-                        <div class="p-6 flex-1 flex flex-col">
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                                Projeto F1
-                            </h3>
-                            <p class="text-gray-400 text-sm mb-4 line-clamp-3">
-                                Projeto desenvolvido para aprender e praticar React, incluindo componentização e rotas.
-                            </p>
-
-                            <div class="flex flex-wrap gap-2 mb-6 mt-auto">
-                                <span
-                                    class="text-xs font-medium text-gray-300 bg-white/5 px-2 py-1 rounded border border-white/5">React</span>
-                                <span
-                                    class="text-xs font-medium text-gray-300 bg-white/5 px-2 py-1 rounded border border-white/5">Js</span>
-                                <span
-                                    class="text-xs font-medium text-gray-300 bg-white/5 px-2 py-1 rounded border border-white/5">Frontend</span>
-                            </div>
-
-                            <a href="https://racing-teams.vercel.app/" target="_blank"
-                                class="flex items-center justify-center gap-2 p-3 rounded-xl border border-white/10 bg-[#161616]/80 text-sm font-medium text-gray-400 transition-all duration-300 hover:border-primary hover:text-white hover:shadow-[0_0_15px_rgba(0,243,255,0.2)]">
-                                Acessar Projeto <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-        <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent opacity-30 my-4"></div>
-
-        <section id="academic" class="py-16 md:py-24 px-6 relative">
-            <div class="container mx-auto max-w-5xl">
-                <div class="text-center lg:text-left mb-16 reveal">
-                    <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Estudos & Certificados</h2>
-                    <div
-                        class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto lg:mx-0 rounded-full mb-6">
-                    </div>
-                    <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto lg:mx-0">
-                        Minha trajetória acadêmica e especializações.
-                    </p>
-                </div>
-
-                <div class="relative border-l-2 border-white/10 ml-4 md:ml-6 space-y-12">
-
-                    <div class="relative pl-8 md:pl-12 reveal group">
-                        <div
-                            class="absolute -left-[9px] top-1 w-5 h-5 bg-black rounded-full border-4 border-primary shadow-[0_0_15px_rgba(0,243,255,0.5)] transition-all group-hover:scale-125 group-hover:bg-primary">
-                        </div>
-
-                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-2">
-                            <h3
-                                class="text-2xl md:text-3xl font-bold text-white group-hover:text-primary transition-colors">
-                                IFRN - Instituto Federal do RN
-                            </h3>
-                            <span
-                                class="text-sm md:text-base text-gray-500 font-mono border border-white/10 px-3 py-1 rounded bg-white/5">
-                                2022 - 2026
-                            </span>
-                        </div>
-
-                        <h4 class="text-xl md:text-2xl text-gray-300 font-medium mb-4">
-                            Técnico em Informática para Internet / Ensino Médio Integrado
-                        </h4>
-
-                        <p class="text-gray-400 text-lg leading-relaxed max-w-3xl">
-                            Formação técnica sólida com foco em desenvolvimento de sistemas, lógica de programação e
-                            infraestrutura.
-                            Durante esse período, desenvolvi base forte em algoritmos, banco de dados e programação
-                            orientada a objetos.
-                        </p>
-                    </div>
-
-                    <div class="relative pl-8 md:pl-12 reveal delay-200 group">
-                        <div
-                            class="absolute -left-[9px] top-1 w-5 h-5 bg-black rounded-full border-4 border-purple-500 shadow-[0_0_15px_rgba(188,19,254,0.5)] transition-all group-hover:scale-125 group-hover:bg-purple-500">
-                        </div>
-
-                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-2">
-                            <h3
-                                class="text-2xl md:text-3xl font-bold text-white group-hover:text-secondary transition-colors">
-                                Alura - Imersão Front-End
-                            </h3>
-                            <span
-                                class="text-sm md:text-base text-gray-500 font-mono border border-white/10 px-3 py-1 rounded bg-white/5">
-                                Fev 2025
-                            </span>
-                        </div>
-
-                        <h4 class="text-xl md:text-2xl text-gray-300 font-medium mb-4">
-                            Curso Intensivo de Desenvolvimento Web
-                        </h4>
-
-                        <p class="text-gray-400 text-lg leading-relaxed max-w-3xl mb-4">
-                            Aprofundamento em HTML, CSS e JavaScript modernos, criando projetos práticos e responsivos
-                            focados na experiência do usuário.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-20 px-6 relative bg-gradient-to-t from-black via-[#0a0a0a] to-transparent">
-            <div class="container mx-auto max-w-4xl text-center reveal">
-                <p class="text-xl text-gray-500 mb-8 tracking-wide">
-                    Vamos nos conectar
-                </p>
-
-                <div class="mx-auto mb-10 h-px w-24 bg-gradient-to-r from-transparent via-white/20 to-transparent">
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-6">
-                    <a href="https://www.linkedin.com/in/eduardo-oliveira-2354ab359/" target="_blank"
-                        class="group relative w-16 h-16 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 transition-all duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] delay-100 reveal">
-                        <i
-                            class="fab fa-linkedin-in text-2xl text-gray-400 group-hover:text-white transition-colors"></i>
-                    </a>
-
-                    <a href="https://github.com/Edu-oliveira7" target="_blank"
-                        class="group relative w-16 h-16 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 transition-all duration-300 hover:-translate-y-2 hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] delay-200 reveal">
-                        <i class="fab fa-github text-2xl text-gray-400 group-hover:text-white transition-colors"></i>
-                    </a>
-
-                </div>
-            </div>
-        </section>
-
+        </div>
     </main>
 
-    <footer class="py-6 bg-black border-t border-white/5 reveal">
-        <div class="container mx-auto text-center px-4">
-            <p class="text-gray-600 text-xs md:text-sm font-medium">
-                &copy; 2025 Eduardo Oliveira.
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="w-full h-px bg-gray-200 my-12 md:my-24"></div>
+    </div>
+
+    <section id="about" class="py-16 px-6 max-w-7xl mx-auto reveal">
+        <div
+            class="bg-white rounded-[2.5rem] p-8 md:p-12 lg:p-16 border border-gray-200 shadow-sm flex flex-col lg:flex-row gap-12 lg:gap-16 items-start relative overflow-hidden group">
+
+            <div class="lg:w-1/3 relative z-10">
+                <div class="mb-6">
+                    <h2 class="text-3xl md:text-5xl font-black text-black tracking-tight mb-4">Sobre mim</h2>
+                    <div class="w-16 h-1.5 bg-black rounded-full"></div>
+                </div>
+                <h3 class="text-xl md:text-2xl font-serif font-bold text-black leading-snug">
+                    Unindo <span class="text-gray-400">formação técnica</span> e <span class="text-gray-400">visão de
+                        negócio</span>.
+                </h3>
+            </div>
+
+            <div
+                class="lg:w-2/3 relative z-10 text-gray-600 leading-relaxed text-base md:text-lg font-medium space-y-6">
+                <p>
+                    Minha base profissional foi construída no <strong class="text-black font-bold">IFRN</strong>, onde
+                    me formei como Técnico em Informática para
+                    Internet. Essa formação me deu o alicerce para criar soluções que vão além de um "site
+                    bonito" — eu crio ferramentas que funcionam de verdade.
+                </p>
+
+                <p>
+                    Ao longo da minha jornada, especializei-me em construir <strong
+                        class="text-black font-bold">sistemas e páginas de alta performance</strong>. Na
+                    prática, isso significa que eu cuido de toda a complexidade técnica para que você tenha uma
+                    plataforma rápida, segura e fácil de usar, tanto para você quanto para o seu cliente final.
+                </p>
+
+                <p>
+                    Acredito que a tecnologia deve ser uma aliada do seu crescimento, não uma dor de cabeça. Por isso,
+                    meu foco é traduzir suas ideias em um <strong class="text-black font-bold">produto digital
+                        profissional</strong>, utilizando as melhores tecnologias do mercado para garantir que seu
+                    projeto seja moderno e duradouro.
+                </p>
+            </div>
+
+            <div
+                class="absolute -bottom-12 -right-12 w-64 h-64 bg-gray-50 rounded-full blur-3xl group-hover:bg-gray-100 transition-colors duration-700">
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 px-6 max-w-7xl mx-auto reveal">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-black text-black tracking-tight mb-4">Tech Stack</h2>
+            <p class="text-gray-500 font-medium">Ferramentas e tecnologias que utilizo no dia a dia</p>
+        </div>
+
+        <div class="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+            <div
+                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"
+                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
+                <span class="text-xs sm:text-sm font-bold text-gray-700">HTML5</span>
+            </div>
+            <div
+                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"
+                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
+                <span class="text-xs sm:text-sm font-bold text-gray-700">CSS3</span>
+            </div>
+            <div
+                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                    alt="JS" class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
+                <span class="text-xs sm:text-sm font-bold text-gray-700">JavaScript</span>
+            </div>
+            <div
+                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"
+                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
+                <span class="text-xs sm:text-sm font-bold text-gray-700">React</span>
+            </div>
+            <div
+                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
+                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
+                <span class="text-xs sm:text-sm font-bold text-gray-700">Python</span>
+            </div>
+            <div
+                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django"
+                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
+                <span class="text-xs sm:text-sm font-bold text-gray-700">Django</span>
+            </div>
+            <div
+                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                    alt="Tailwind" class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
+                <span class="text-xs sm:text-sm font-bold text-gray-700">Tailwind</span>
+            </div>
+            <div
+                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"
+                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
+                <span class="text-xs sm:text-sm font-bold text-gray-700">MySQL</span>
+            </div>
+            <div
+                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"
+                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
+                <span class="text-xs sm:text-sm font-bold text-gray-700">Figma</span>
+            </div>
+            <div
+                class="skill-card group flex flex-col items-center justify-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all text-center">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="DRF"
+                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
+                <span class="text-xs sm:text-sm font-bold text-gray-700">Django Rest</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 px-6 max-w-7xl mx-auto reveal">
+        <div class="mb-12 text-center md:text-left flex flex-col items-center md:items-start">
+            <h2 class="text-3xl md:text-5xl font-black text-black tracking-tight mb-4">Meus Projetos</h2>
+            <div class="w-16 h-1.5 bg-black rounded-full"></div>
+            <p class="mt-4 text-gray-500 font-medium">Confira alguns dos trabalhos que desenvolvi recentemente.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+                class="project-card bg-white border border-gray-100 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
+                <div class="h-48 sm:h-56 bg-gray-100 relative overflow-hidden group">
+                    <img src="img/mapa-jornada.png" alt="Mapa da Jornada"
+                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                        onerror="this.src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop'">
+                </div>
+                <div class="p-6 sm:p-8 flex flex-col flex-1">
+                    <h3 class="text-xl font-bold text-black mb-2">Mapa da Jornada</h3>
+                    <p class="text-gray-500 text-sm mb-6 flex-1">Ajuda quem se sente perdido a escolher uma carreira com
+                        base em fatos e não em "palpites".</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            class="text-xs font-bold text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded-xl">Python</span>
+                        <span
+                            class="text-xs font-bold text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded-xl">Django</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="http://thierry12.pythonanywhere.com" target="_blank"
+                            class="flex-1 text-center bg-black text-white py-3 rounded-xl text-sm font-bold hover:bg-gray-800 transition-colors">Acessar</a>
+                        <a href="https://github.com/jeanlucqs/mapadajornada.git" target="_blank"
+                            class="w-12 flex items-center justify-center border border-gray-200 text-black rounded-xl hover:bg-gray-50 transition-colors"><i
+                                class="fa-brands fa-github text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="project-card bg-white border border-gray-100 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
+                <div class="h-48 sm:h-56 bg-gray-100 relative overflow-hidden group">
+                    <img src="img/projeto-uiux.png" alt="Projeto UI/UX"
+                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                        onerror="this.src='https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop'">
+                </div>
+                <div class="p-6 sm:p-8 flex flex-col flex-1">
+                    <h3 class="text-xl font-bold text-black mb-2">Projeto UI/UX</h3>
+                    <p class="text-gray-500 text-sm mb-6 flex-1">Projeto focado em UI/UX moderno, explorando hierarquia
+                        visual e tipografia aplicada.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            class="text-xs font-bold text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded-xl">UI/UX</span>
+                        <span
+                            class="text-xs font-bold text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded-xl">Frontend</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="https://edu-oliveira7.github.io/Projeto-UI-UX/" target="_blank"
+                            class="flex-1 text-center bg-black text-white py-3 rounded-xl text-sm font-bold hover:bg-gray-800 transition-colors">Acessar</a>
+                        <a href="https://github.com/Edu-oliveira7/Projeto-UI-UX.git" target="_blank"
+                            class="w-12 flex items-center justify-center border border-gray-200 text-black rounded-xl hover:bg-gray-50 transition-colors"><i
+                                class="fa-brands fa-github text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="project-card bg-white border border-gray-100 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
+                <div class="h-48 sm:h-56 bg-gray-100 relative overflow-hidden group">
+                    <img src="img/projeto-f1.png" alt="Projeto F1"
+                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                        onerror="this.src='https://images.unsplash.com/photo-1532515438831-2fb9eeb8e805?q=80&w=1000&auto=format&fit=crop'">
+                </div>
+                <div class="p-6 sm:p-8 flex flex-col flex-1">
+                    <h3 class="text-xl font-bold text-black mb-2">Projeto F1</h3>
+                    <p class="text-gray-500 text-sm mb-6 flex-1">Desenvolvido para praticar React, incluindo
+                        componentização e rotas do campeonato.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            class="text-xs font-bold text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded-xl">React</span>
+                        <span
+                            class="text-xs font-bold text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded-xl">JS</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="https://racing-teams.vercel.app/" target="_blank"
+                            class="flex-1 text-center bg-black text-white py-3 rounded-xl text-sm font-bold hover:bg-gray-800 transition-colors">Acessar</a>
+                        <a href="https://github.com/Edu-oliveira7/F1-React.git" target="_blank"
+                            class="w-12 flex items-center justify-center border border-gray-200 text-black rounded-xl hover:bg-gray-50 transition-colors"><i
+                                class="fa-brands fa-github text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 px-6 max-w-7xl mx-auto reveal">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-black text-black mb-4">Como posso ajudar o seu negócio?</h2>
+            <p class="text-gray-500 font-medium max-w-2xl mx-auto">
+                Utilizo minha formação técnica para entregar soluções digitais profissionais,
+                seguras e focadas em resultados.
             </p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div
+                class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all group reveal delay-100 hover-scale">
+                <div
+                    class="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-laptop-code text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-black mb-3">Sites e Portfólios</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Criação de sites institucionais modernos e responsivos
+                    (que funcionam bem no celular e PC), garantindo que sua marca tenha uma presença profissional na
+                    internet.</p>
+            </div>
+
+            <div
+                class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all group reveal delay-200 hover-scale">
+                <div
+                    class="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-bullseye text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-black mb-3">Páginas de Vendas</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Desenvolvimento de Landing Pages focadas em conversão.
+                    Ideais para lançamentos de produtos ou captação de novos clientes de forma direta e rápida.</p>
+            </div>
+
+            <div
+                class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all group reveal delay-300 hover-scale">
+                <div
+                    class="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-gears text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-black mb-3">Sistemas Sob Medida</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">Criação de plataformas personalizadas para gerenciar
+                    dados, estoques ou processos internos da sua empresa, substituindo planilhas confusas por sistemas
+                    seguros.</p>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 px-6 max-w-7xl mx-auto mb-10 reveal">
+        <div class="bg-black rounded-[2.5rem] p-10 md:p-16 text-center text-white relative overflow-hidden">
+
+            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                <div class="absolute -top-24 -left-24 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="relative z-10 max-w-2xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-black mb-4">Pronto para tirar sua ideia do papel?</h2>
+                <p class="text-gray-400 text-lg mb-8">
+                    Seja para um projeto personalizado, um site para sua empresa ou uma oportunidade de parceria, estou
+                    à disposição para conversarmos.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+
+                    <a href="https://www.linkedin.com/in/eduardo-oliveira-2354ab359/" target="_blank"
+                        class="bg-gray-800 text-white border border-gray-700 font-bold py-4 px-8 rounded-2xl hover:bg-gray-700 transition-all hover-scale flex items-center justify-center gap-2 reveal delay-200">
+                        <i class="fa-brands fa-linkedin text-xl"></i> Ver Perfil Profissional
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white text-center py-6 text-sm text-gray-500 border-t border-gray-100">
+        &copy; 2026 Eduardo Oliveira. Todos os direitos reservados.
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 

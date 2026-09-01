@@ -1,435 +1,470 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="scroll-smooth">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/pc.jpg" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eduardo Oliveira — Full Stack Developer</title>
+  <meta name="description" content="Eduardo Oliveira — Desenvolvedor Full Stack Jr.">
+  <link rel="icon" href="img/pc.jpg" type="image/x-icon">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="overflow-x-hidden selection:bg-black selection:text-white font-sans bg-white">
-
-    <header class="fixed top-4 sm:top-6 left-0 right-0 mx-auto w-[95%] max-w-6xl z-50">
-        <nav
-            class="bg-white/90 backdrop-blur-md border border-gray-200 shadow-lg rounded-full px-4 py-3 flex items-center justify-between relative">
-
-            <div class="flex items-center gap-2 shrink-0">
-                <span class="text-xl font-black tracking-tighter text-black">
-                    Edu<span class="text-gray-400">Dev</span>
-                </span>
-            </div>
-
-            <div class="hidden md:flex items-center gap-2">
-                <a href="#home"
-                    class="nav-link active-nav bg-black text-white px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2">
-                    Home
-                </a>
-                <a href="#about"
-                    class="nav-link text-gray-600 hover:text-black px-3 py-2 text-sm font-medium transition-colors">Sobre</a>
-                <a href="#skills"
-                    class="nav-link text-gray-600 hover:text-black px-3 py-2 text-sm font-medium transition-colors">Skills</a>
-                <a href="#projects"
-                    class="nav-link text-gray-600 hover:text-black px-3 py-2 text-sm font-medium transition-colors">Projetos</a>
-                <a href="#services"
-                    class="nav-link text-gray-600 hover:text-black px-3 py-2 text-sm font-medium transition-colors">Serviços</a>
-                <a href="#contact"
-                    class="nav-link text-gray-600 hover:text-black px-3 py-2 text-sm font-medium transition-colors">Contato</a>
-            </div>
-
-            <div class="flex items-center gap-3">
-                <button id="mobile-menu-btn"
-                    class="md:hidden bg-black text-white w-9 h-9 rounded-full flex items-center justify-center transition-transform active:scale-95">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-
-            <div id="mobile-menu"
-                class="hidden absolute top-full left-0 right-0 mt-3 bg-white border border-gray-200 shadow-2xl rounded-2xl flex flex-col p-4 gap-2 origin-top transition-all">
-                <a href="#home"
-                    class="mobile-link bg-gray-50 text-black px-4 py-3 rounded-xl text-sm font-bold flex items-center gap-3">
-                    <i class="fa-solid fa-house w-5"></i> Home
-                </a>
-                <a href="#about"
-                    class="mobile-link text-gray-600 hover:bg-gray-50 px-4 py-3 rounded-xl text-sm font-medium flex items-center gap-3">
-                    <i class="fa-solid fa-user w-5"></i> Sobre
-                </a>
-                <a href="#skills"
-                    class="mobile-link text-gray-600 hover:bg-gray-50 px-4 py-3 rounded-xl text-sm font-medium flex items-center gap-3">
-                    <i class="fa-solid fa-code w-5"></i> Skills
-                </a>
-                <a href="#projects"
-                    class="mobile-link text-gray-600 hover:bg-gray-50 px-4 py-3 rounded-xl text-sm font-medium flex items-center gap-3">
-                    <i class="fa-solid fa-folder-open w-5"></i> Projetos
-                </a>
-                <a href="#services"
-                    class="mobile-link text-gray-600 hover:bg-gray-50 px-4 py-3 rounded-xl text-sm font-medium flex items-center gap-3">
-                    <i class="fa-solid fa-laptop-code w-5"></i> Serviços
-                </a>
-                <a href="#contact"
-                    class="mobile-link text-gray-600 hover:bg-gray-50 px-4 py-3 rounded-xl text-sm font-medium flex items-center gap-3">
-                    <i class="fa-solid fa-envelope w-5"></i> Contato
-                </a>
-            </div>
-        </nav>
-    </header>
-
-    <main id="home" class="min-h-screen flex items-center justify-center pt-32 pb-12 px-6 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 items-center w-full">
-            <div class="flex flex-col items-center lg:items-start text-center lg:text-left fade-in-left">
-                <div
-                    class="bg-gray-100 border border-gray-200 text-gray-700 text-xs font-semibold px-4 py-1.5 rounded-full flex items-center gap-2 mb-6">
-                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Disponível para novos projetos
-                </div>
-
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.1] text-black">
-                    Olá, eu sou <br> Eduardo Oliveira
-                </h1>
-
-                <h2 class="text-2xl sm:text-4xl font-serif font-bold mt-4 text-black h-12 flex items-center">
-                    <span id="typewriter"></span><span class="animate-pulse ml-1">|</span>
-                </h2>
-
-                <p class="text-gray-500 text-base md:text-lg mt-6 max-w-lg leading-relaxed font-medium">
-                    Desenvolvo sistemas inteligentes e sites de alta performance que conectam sua marca aos clientes.
-                </p>
-
-                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-8">
-                    <a href="#contact"
-                        class="bg-black text-white px-7 py-3 rounded-xl text-sm font-semibold hover:bg-gray-800 transition-all hover:-translate-y-0.5 flex items-center gap-2">
-                        Vamos conversar?
-                    </a>
-                    <div class="flex gap-4 ml-2">
-                        <a href="https://github.com/Edu-oliveira7" target="_blank"
-                            class="text-gray-600 hover:text-black transition-all text-2xl"><i
-                                class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/eduardo-oliveira-2354ab359/" target="_blank"
-                            class="text-gray-600 hover:text-blue-600 transition-all text-2xl"><i
-                                class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hidden lg:flex justify-center lg:justify-end relative fade-in-right">
-                <div
-                    class="relative w-full max-w-md aspect-square bg-gray-50 rounded-[2rem] border-2 border-gray-100 overflow-hidden shadow-2xl animate-float">
-                    <img src="img/download (6).jpg" alt="Eduardo Oliveira"
-                        class="w-full h-full object-cover object-bottom"
-                        onerror="this.src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop'">
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="w-full h-px bg-gray-200 my-12 md:my-24"></div>
+<body>
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-mark">Edudev</div>
+      <div class="loader-rule"><span></span></div>
     </div>
+  </div>
 
-    <section id="about" class="py-16 px-6 max-w-7xl mx-auto reveal">
-        <div
-            class="bg-white rounded-[2.5rem] p-8 md:p-12 lg:p-16 border border-gray-200 shadow-sm flex flex-col lg:flex-row gap-12 lg:gap-16 items-start relative overflow-hidden group">
+  <header id="navbar">
+    <nav class="site-nav">
+      <a href="#home" class="brand" aria-label="Eduardo Oliveira">
+        Edudev
+      </a>
 
-            <div class="lg:w-1/3 relative z-10">
-                <div class="mb-6">
-                    <h2 class="text-3xl md:text-5xl font-black text-black tracking-tight mb-4">Sobre mim</h2>
-                    <div class="w-16 h-1.5 bg-black rounded-full"></div>
-                </div>
-                <h3 class="text-xl md:text-2xl font-serif font-bold text-black leading-snug">
-                    Unindo <span class="text-gray-400">formação técnica</span> e <span class="text-gray-400">visão de
-                        negócio</span>.
-                </h3>
+      <div class="nav-links">
+        <a href="#about" data-section="about">SOBRE</a>
+        <a href="#timeline" data-section="timeline">TRAJETÓRIA</a>
+        <a href="#work" data-section="work">PROJETOS</a>
+        <a href="#services" data-section="services">SERVIÇOS</a>
+        <a href="#process" data-section="process">PROCESSO</a>
+        <a href="#contact" data-section="contact">CONTATO</a>
+      </div>
+
+      <a href="#contact" class="nav-cta">
+        CONVERSAR <span>↗</span>
+      </a>
+
+      <button id="menu-btn" class="menu-btn" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <div id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-top">
+      <span>Edudev</span>
+      <button id="menu-close" aria-label="Fechar menu">FECHAR ×</button>
+    </div>
+    <nav>
+      <a href="#home"><span>INÍCIO</span></a>
+      <a href="#about"><span>SOBRE</span></a>
+      <a href="#timeline"><span>TRAJETÓRIA</span></a>
+      <a href="#work"><span>PROJETOS</span></a>
+      <a href="#services"><span>SERVIÇOS</span></a>
+      <a href="#process"><span>PROCESSO</span></a>
+      <a href="#contact"><span>CONTATO</span></a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="hero-kicker hero-item">FULL STACK DEVELOPER</div>
+
+          <h1 class="hero-title">
+            <span class="line-mask"><span>DESIGN</span></span>
+            <span class="line-mask"><span class="red-word">&amp;</span> <span>CODE</span></span>
+          </h1>
+
+          <div class="hero-photo-overlay">
+            <div class="hero-photo-frame" data-parallax="0.035">
+              <img src="img/eduardo.png" alt="Eduardo Oliveira" fetchpriority="high">
             </div>
+          </div>
 
-            <div
-                class="lg:w-2/3 relative z-10 text-gray-600 leading-relaxed text-base md:text-lg font-medium space-y-6">
-                <p>
-                    Minha base profissional foi construída no <strong class="text-black font-bold">IFRN</strong>, onde
-                    me formei como Técnico em Informática para
-                    Internet. Essa formação me deu o alicerce para criar soluções que vão além de um "site
-                    bonito" — eu crio ferramentas que funcionam de verdade.
-                </p>
+          <p class="hero-description hero-item">
+            Crio sites, interfaces e sistemas digitais que transformam ideias em experiências claras, rápidas e
+            profissionais.
+          </p>
 
-                <p>
-                    Ao longo da minha jornada, especializei-me em construir <strong
-                        class="text-black font-bold">sistemas e páginas de alta performance</strong>. Na
-                    prática, isso significa que eu cuido de toda a complexidade técnica para que você tenha uma
-                    plataforma rápida, segura e fácil de usar, tanto para você quanto para o seu cliente final.
-                </p>
-
-                <p>
-                    Acredito que a tecnologia deve ser uma aliada do seu crescimento, não uma dor de cabeça. Por isso,
-                    meu foco é traduzir suas ideias em um <strong class="text-black font-bold">produto digital
-                        profissional</strong>, utilizando as melhores tecnologias do mercado para garantir que seu
-                    projeto seja moderno e duradouro.
-                </p>
-            </div>
-
-            <div
-                class="absolute -bottom-12 -right-12 w-64 h-64 bg-gray-50 rounded-full blur-3xl group-hover:bg-gray-100 transition-colors duration-700">
-            </div>
+          <div class="hero-actions hero-item">
+            <a href="#work" class="hero-btn">VER PROJETOS</a>
+          </div>
         </div>
+
+        <div class="hero-visual">
+          <div class="hero-red-block"></div>
+          <div class="hero-vertical-note">Full Stack Developer Jr</div>
+
+          <div class="hero-photo-frame" data-parallax="0.035">
+            <img src="img/eduardo.png" alt="Eduardo Oliveira" fetchpriority="high">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="hero-bottom"></div>
     </section>
 
-    <section id="skills" class="py-16 px-6 max-w-7xl mx-auto reveal">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-black text-black tracking-tight mb-4">Tech Stack</h2>
-            <p class="text-gray-500 font-medium">Ferramentas e tecnologias que utilizo no dia a dia</p>
+    <!-- ABOUT -->
+    <section id="about" class="about-section">
+      <div class="about-top reveal">
+        <p class="eyebrow red">SOBRE MIM</p>
+        <h2>DESIGN QUE PENSA.<br><span>CÓDIGO QUE ENTREGA.</span></h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p class="about-lead">Eu uno <span>design</span>, estrutura e desenvolvimento para criar experiências digitais
+            que fazem sentido.</p>
+          <p>Minha base profissional foi construída no IFRN, onde me formo como Técnico em Informática para Internet.
+            Transformo essa base em páginas, interfaces e sistemas funcionais, responsivos e atentos aos detalhes.</p>
+          <div style="margin-top: 32px;">
+            <a href="#contact" class="hero-btn">VAMOS CONVERSAR</a>
+          </div>
         </div>
 
-        <div class="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
-            <div
-                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"
-                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
-                <span class="text-xs sm:text-sm font-bold text-gray-700">HTML5</span>
-            </div>
-            <div
-                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"
-                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
-                <span class="text-xs sm:text-sm font-bold text-gray-700">CSS3</span>
-            </div>
-            <div
-                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                    alt="JS" class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
-                <span class="text-xs sm:text-sm font-bold text-gray-700">JavaScript</span>
-            </div>
-            <div
-                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"
-                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
-                <span class="text-xs sm:text-sm font-bold text-gray-700">React</span>
-            </div>
-            <div
-                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
-                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
-                <span class="text-xs sm:text-sm font-bold text-gray-700">Python</span>
-            </div>
-            <div
-                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django"
-                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
-                <span class="text-xs sm:text-sm font-bold text-gray-700">Django</span>
-            </div>
-            <div
-                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
-                    alt="Tailwind" class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
-                <span class="text-xs sm:text-sm font-bold text-gray-700">Tailwind</span>
-            </div>
-            <div
-                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"
-                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
-                <span class="text-xs sm:text-sm font-bold text-gray-700">MySQL</span>
-            </div>
-            <div
-                class="skill-card group flex flex-col items-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"
-                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
-                <span class="text-xs sm:text-sm font-bold text-gray-700">Figma</span>
-            </div>
-            <div
-                class="skill-card group flex flex-col items-center justify-center gap-3 p-4 sm:p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all text-center">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="DRF"
-                    class="w-10 h-10 sm:w-12 sm:h-12 group-hover:scale-110 transition-transform">
-                <span class="text-xs sm:text-sm font-bold text-gray-700">Django Rest</span>
-            </div>
+        <div class="about-photo reveal">
+          <div class="photo-red-block"></div>
+          <img src="img/eduardo.png" alt="Eduardo Oliveira" loading="lazy">
+          <span>EDUARDO<br>OLIVEIRA</span>
         </div>
+
+        <div class="skills reveal">
+          <p class="eyebrow">STACK / TECNOLOGIAS</p>
+          <div class="technology-wall">
+            <div class="technology"><i class="devicon-html5-plain" aria-hidden="true"></i><span>HTML5</span></div>
+            <div class="technology"><i class="devicon-css3-plain" aria-hidden="true"></i><span>CSS3</span></div>
+            <div class="technology"><i class="devicon-javascript-plain" aria-hidden="true"></i><span>JAVASCRIPT</span>
+            </div>
+            <div class="technology"><i class="devicon-react-original" aria-hidden="true"></i><span>REACT</span></div>
+            <div class="technology"><i class="devicon-tailwindcss-original" aria-hidden="true"></i><span>TAILWIND</span>
+            </div>
+            <div class="technology"><i class="devicon-python-plain" aria-hidden="true"></i><span>PYTHON</span></div>
+            <div class="technology"><i class="devicon-django-plain" aria-hidden="true"></i><span>DJANGO</span></div>
+            <div class="technology"><i class="devicon-djangorest-plain" aria-hidden="true"></i><span>DJANGO REST</span>
+            </div>
+            <div class="technology"><i class="devicon-mysql-plain" aria-hidden="true"></i><span>MYSQL</span></div>
+            <div class="technology"><i class="devicon-nextjs-plain" aria-hidden="true"></i><span>NEXT.JS</span></div>
+            <div class="technology"><i class="devicon-git-plain" aria-hidden="true"></i><span>GIT</span></div>
+            <div class="technology"><i class="devicon-github-original" aria-hidden="true"></i><span>GITHUB</span></div>
+            <div class="technology"><i class="devicon-figma-plain" aria-hidden="true"></i><span>FIGMA</span></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="projects" class="py-20 px-6 max-w-7xl mx-auto reveal">
-        <div class="mb-12 text-center md:text-left flex flex-col items-center md:items-start">
-            <h2 class="text-3xl md:text-5xl font-black text-black tracking-tight mb-4">Meus Projetos</h2>
-            <div class="w-16 h-1.5 bg-black rounded-full"></div>
-            <p class="mt-4 text-gray-500 font-medium">Confira alguns dos trabalhos que desenvolvi recentemente.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div
-                class="project-card bg-white border border-gray-100 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
-                <div class="h-48 sm:h-56 bg-gray-100 relative overflow-hidden group">
-                    <img src="img/mapa-jornada.png" alt="Mapa da Jornada"
-                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                        onerror="this.src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop'">
-                </div>
-                <div class="p-6 sm:p-8 flex flex-col flex-1">
-                    <h3 class="text-xl font-bold text-black mb-2">Mapa da Jornada</h3>
-                    <p class="text-gray-500 text-sm mb-6 flex-1">Ajuda quem se sente perdido a escolher uma carreira com
-                        base em fatos e não em "palpites".</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span
-                            class="text-xs font-bold text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded-xl">Python</span>
-                        <span
-                            class="text-xs font-bold text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded-xl">Django</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <a href="http://thierry12.pythonanywhere.com" target="_blank"
-                            class="flex-1 text-center bg-black text-white py-3 rounded-xl text-sm font-bold hover:bg-gray-800 transition-colors">Acessar</a>
-                        <a href="https://github.com/jeanlucqs/mapadajornada.git" target="_blank"
-                            class="w-12 flex items-center justify-center border border-gray-200 text-black rounded-xl hover:bg-gray-50 transition-colors"><i
-                                class="fa-brands fa-github text-xl"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="project-card bg-white border border-gray-100 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
-                <div class="h-48 sm:h-56 bg-gray-100 relative overflow-hidden group">
-                    <img src="img/projeto-uiux.png" alt="Projeto UI/UX"
-                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                        onerror="this.src='https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop'">
-                </div>
-                <div class="p-6 sm:p-8 flex flex-col flex-1">
-                    <h3 class="text-xl font-bold text-black mb-2">Projeto UI/UX</h3>
-                    <p class="text-gray-500 text-sm mb-6 flex-1">Projeto focado em UI/UX moderno, explorando hierarquia
-                        visual e tipografia aplicada.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span
-                            class="text-xs font-bold text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded-xl">UI/UX</span>
-                        <span
-                            class="text-xs font-bold text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded-xl">Frontend</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <a href="https://edu-oliveira7.github.io/Projeto-UI-UX/" target="_blank"
-                            class="flex-1 text-center bg-black text-white py-3 rounded-xl text-sm font-bold hover:bg-gray-800 transition-colors">Acessar</a>
-                        <a href="https://github.com/Edu-oliveira7/Projeto-UI-UX.git" target="_blank"
-                            class="w-12 flex items-center justify-center border border-gray-200 text-black rounded-xl hover:bg-gray-50 transition-colors"><i
-                                class="fa-brands fa-github text-xl"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="project-card bg-white border border-gray-100 rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
-                <div class="h-48 sm:h-56 bg-gray-100 relative overflow-hidden group">
-                    <img src="img/projeto-f1.png" alt="Projeto F1"
-                        class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                        onerror="this.src='https://images.unsplash.com/photo-1532515438831-2fb9eeb8e805?q=80&w=1000&auto=format&fit=crop'">
-                </div>
-                <div class="p-6 sm:p-8 flex flex-col flex-1">
-                    <h3 class="text-xl font-bold text-black mb-2">Projeto F1</h3>
-                    <p class="text-gray-500 text-sm mb-6 flex-1">Desenvolvido para praticar React, incluindo
-                        componentização e rotas do campeonato.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span
-                            class="text-xs font-bold text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded-xl">React</span>
-                        <span
-                            class="text-xs font-bold text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded-xl">JS</span>
-                    </div>
-                    <div class="flex gap-3">
-                        <a href="https://racing-teams.vercel.app/" target="_blank"
-                            class="flex-1 text-center bg-black text-white py-3 rounded-xl text-sm font-bold hover:bg-gray-800 transition-colors">Acessar</a>
-                        <a href="https://github.com/Edu-oliveira7/F1-React.git" target="_blank"
-                            class="w-12 flex items-center justify-center border border-gray-200 text-black rounded-xl hover:bg-gray-50 transition-colors"><i
-                                class="fa-brands fa-github text-xl"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- STATS -->
+    <section class="stats-section">
+      <div class="stat">
+        <strong data-count="4">0</strong><span>+</span>
+        <small>PROJETOS<br>SELECIONADOS</small>
+      </div>
+      <div class="stat">
+        <strong data-count="13">0</strong><span>+</span>
+        <small>TECNOLOGIAS<br>NO STACK</small>
+      </div>
+      <div class="stat">
+        <strong>2026</strong>
+        <small>FORMAÇÃO NO<br>IFRN</small>
+      </div>
+      <div class="stat stat-note">
+        <span>+</span>
+        <small>DO FIGMA AO <br>CÓDIGO</small>
+      </div>
     </section>
 
-    <section id="services" class="py-16 px-6 max-w-7xl mx-auto reveal">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-black text-black mb-4">Como posso ajudar o seu negócio?</h2>
-            <p class="text-gray-500 font-medium max-w-2xl mx-auto">
-                Utilizo minha formação técnica para entregar soluções digitais profissionais,
-                seguras e focadas em resultados.
-            </p>
+    <!-- TIMELINE -->
+    <section id="timeline" class="process-section section">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow red">COMO CHEGUEI AQUI</p>
+          <h2>DE ESTUDANTE<br>A <span>DEV.</span></h2>
         </div>
+        <p>Uma linha do tempo curta, mas real — cada etapa levando à próxima.</p>
+      </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <div
-                class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all group reveal delay-100 hover-scale">
-                <div
-                    class="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-laptop-code text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-black mb-3">Sites e Portfólios</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">Criação de sites institucionais modernos e responsivos
-                    (que funcionam bem no celular e PC), garantindo que sua marca tenha uma presença profissional na
-                    internet.</p>
-            </div>
-
-            <div
-                class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all group reveal delay-200 hover-scale">
-                <div
-                    class="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-bullseye text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-black mb-3">Páginas de Vendas</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">Desenvolvimento de Landing Pages focadas em conversão.
-                    Ideais para lançamentos de produtos ou captação de novos clientes de forma direta e rápida.</p>
-            </div>
-
-            <div
-                class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all group reveal delay-300 hover-scale">
-                <div
-                    class="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-gears text-xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-black mb-3">Sistemas Sob Medida</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">Criação de plataformas personalizadas para gerenciar
-                    dados, estoques ou processos internos da sua empresa, substituindo planilhas confusas por sistemas
-                    seguros.</p>
-            </div>
-
-
+      <div class="process-grid">
+        <div class="process-item reveal"><span>2022</span>
+          <h3>INÍCIO</h3>
+          <p>Comecei o curso Técnico em Informática para Internet no IFRN, construindo a base em lógica, web e
+            desenvolvimento.</p>
         </div>
+        <div class="process-item reveal"><span>2024</span>
+          <h3>PRIMEIROS PROJETOS</h3>
+          <p>Saí da teoria para a prática com projetos pessoais como o Mapa da Jornada, aplicando Python e Django em
+            algo real.</p>
+        </div>
+        <div class="process-item reveal"><span>2026</span>
+          <h3>PRIMEIRO FREELANCE</h3>
+          <p>Entreguei meu primeiro projeto para um cliente real: a landing page da Calangos Marketing, com React, Vite
+            e Tailwind CSS.</p>
+        </div>
+        <div class="process-item reveal"><span>HOJE</span>
+          <h3>APROFUNDAMENTO FULL STACK</h3>
+          <p>Sigo evoluindo com Next.js, Django REST e MongoDB, ampliando minha atuação além do frontend.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="py-16 px-6 max-w-7xl mx-auto mb-10 reveal">
-        <div class="bg-black rounded-[2.5rem] p-10 md:p-16 text-center text-white relative overflow-hidden">
-
-            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-                <div class="absolute -top-24 -left-24 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-            </div>
-
-            <div class="relative z-10 max-w-2xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-black mb-4">Pronto para tirar sua ideia do papel?</h2>
-                <p class="text-gray-400 text-lg mb-8">
-                    Seja para um projeto personalizado, um site para sua empresa ou uma oportunidade de parceria, estou
-                    à disposição para conversarmos.
-                </p>
-
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-
-                    <a href="https://www.linkedin.com/in/eduardo-oliveira-2354ab359/" target="_blank"
-                        class="bg-gray-800 text-white border border-gray-700 font-bold py-4 px-8 rounded-2xl hover:bg-gray-700 transition-all hover-scale flex items-center justify-center gap-2 reveal delay-200">
-                        <i class="fa-brands fa-linkedin text-xl"></i> Ver Perfil Profissional
-                    </a>
-                </div>
-            </div>
+    <!-- WORK -->
+    <section id="work" class="section work-section">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow red">TRABALHOS SELECIONADOS</p>
+          <h2>PROJETOS<br><span>EM DESTAQUE</span></h2>
         </div>
+        <a class="hero-btn" href="https://github.com/Edu-oliveira7" target="_blank" rel="noopener">VER GITHUB</a>
+      </div>
+
+      <div class="work-grid">
+        <div class="project reveal">
+          <div class="project-image">
+            <img src="img/mapa-jornada.png" alt="Mapa da Jornada" loading="lazy">
+            <div class="project-overlay">
+              <div class="project-overlay-actions">
+                <a href="http://thierry12.pythonanywhere.com" target="_blank" rel="noopener"
+                  class="project-action-btn">VER PROJETO ↗</a>
+                <a href="https://github.com/jeanlucqs/mapadajornada" target="_blank" rel="noopener"
+                  class="project-action-btn github">GITHUB REPO ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-meta">
+            <div>
+              <span class="project-index">01</span>
+              <h3>MAPA DA JORNADA</h3>
+              <div class="project-card-links">
+                <a href="http://thierry12.pythonanywhere.com" target="_blank" rel="noopener"
+                  class="project-text-link">Deploy ↗</a>
+                <span class="project-link-dot">•</span>
+                <a href="https://github.com/jeanlucqs/mapadajornada" target="_blank" rel="noopener"
+                  class="project-text-link">GitHub ↗</a>
+              </div>
+            </div>
+            <span>PYTHON · DJANGO</span>
+          </div>
+        </div>
+
+        <div class="project reveal">
+          <div class="project-image">
+            <img src="img/projeto-uiux.png" alt="Projeto UI/UX" loading="lazy">
+            <div class="project-overlay">
+              <div class="project-overlay-actions">
+                <a href="https://edu-oliveira7.github.io/Projeto-UI-UX/" target="_blank" rel="noopener"
+                  class="project-action-btn">VER PROJETO ↗</a>
+                <a href="https://github.com/Edu-oliveira7/Projeto-UI-UX" target="_blank" rel="noopener"
+                  class="project-action-btn github">GITHUB REPO ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-meta">
+            <div>
+              <span class="project-index">02</span>
+              <h3>PROJETO UI/UX</h3>
+              <div class="project-card-links">
+                <a href="https://edu-oliveira7.github.io/Projeto-UI-UX/" target="_blank" rel="noopener"
+                  class="project-text-link">Deploy ↗</a>
+                <span class="project-link-dot">•</span>
+                <a href="https://github.com/Edu-oliveira7/Projeto-UI-UX" target="_blank" rel="noopener"
+                  class="project-text-link">GitHub ↗</a>
+              </div>
+            </div>
+            <span>UI/UX · FRONTEND</span>
+          </div>
+        </div>
+
+        <div class="project reveal">
+          <div class="project-image">
+            <img src="img/projeto-f1.png" alt="Projeto F1" loading="lazy">
+            <div class="project-overlay">
+              <div class="project-overlay-actions">
+                <a href="https://racing-teams.vercel.app/" target="_blank" rel="noopener" class="project-action-btn">VER
+                  PROJETO ↗</a>
+                <a href="https://github.com/Edu-oliveira7/racing-teams" target="_blank" rel="noopener"
+                  class="project-action-btn github">GITHUB REPO ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-meta">
+            <div>
+              <span class="project-index">03</span>
+              <h3>F1 / RACING TEAMS</h3>
+              <div class="project-card-links">
+                <a href="https://racing-teams.vercel.app/" target="_blank" rel="noopener"
+                  class="project-text-link">Deploy ↗</a>
+                <span class="project-link-dot">•</span>
+                <a href="https://github.com/Edu-oliveira7/racing-teams" target="_blank" rel="noopener"
+                  class="project-text-link">GitHub ↗</a>
+              </div>
+            </div>
+            <span>REACT · JAVASCRIPT</span>
+          </div>
+        </div>
+
+
+        <div class="project reveal">
+          <div class="project-image">
+            <img src="img/calangos-marketing.png" alt="Calangos Marketing" loading="lazy">
+            <div class="project-overlay">
+              <div class="project-overlay-actions">
+                <a href="https://calangos-marketing.vercel.app/" target="_blank" rel="noopener"
+                  class="project-action-btn">VER PROJETO ↗</a>
+                <a href="https://github.com/Edu-oliveira7/calangos-marketing" target="_blank" rel="noopener"
+                  class="project-action-btn github">GITHUB REPO ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-meta">
+            <div>
+              <span class="project-index">04</span>
+              <h3>CALANGOS MARKETING</h3>
+              <div class="project-card-links">
+                <a href="https://calangos-marketing.vercel.app/" target="_blank" rel="noopener"
+                  class="project-text-link">Deploy ↗</a>
+                <span class="project-link-dot">•</span>
+                <a href="https://github.com/Edu-oliveira7/calangos-marketing" target="_blank" rel="noopener"
+                  class="project-text-link">GitHub ↗</a>
+              </div>
+            </div>
+            <span>LANDING PAGE · UI/UX</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <footer class="bg-white text-center py-6 text-sm text-gray-500 border-t border-gray-100">
-        &copy; 2026 Eduardo Oliveira. Todos os direitos reservados.
-    </footer>
+    <!-- SERVICES -->
+    <section id="services" class="services-section">
+      <div class="services-header reveal">
+        <div>
+          <p class="eyebrow red">O QUE EU FAÇO</p>
+          <h2>COMO POSSO<br><span>AJUDAR?</span></h2>
+        </div>
+        <p>Direção visual e desenvolvimento para transformar ideias em experiências digitais claras, funcionais e
+          cuidadas.</p>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="services-list">
+        <article class="service reveal">
+          <span class="service-number">01</span>
+          <div class="service-title">
+            <h3>WEB DESIGN</h3>
+          </div>
+          <p>Sites institucionais e portfólios com direção visual, hierarquia e experiência pensadas para representar
+            sua marca.</p>
+        </article>
+
+        <article class="service reveal">
+          <span class="service-number">02</span>
+          <div class="service-title">
+            <h3>UI/UX DESIGN</h3>
+          </div>
+          <p>Interfaces intuitivas, organização visual e experiências pensadas para facilitar a jornada do usuário.</p>
+        </article>
+
+        <article class="service reveal">
+          <span class="service-number">03</span>
+          <div class="service-title">
+            <h3>DEVELOPMENT</h3>
+          </div>
+          <p>Transformo o design em interfaces rápidas, responsivas e funcionais usando tecnologias modernas.</p>
+        </article>
+
+        <article class="service reveal">
+          <span class="service-number">04</span>
+          <div class="service-title">
+            <h3>LANDING PAGES</h3>
+          </div>
+          <p>Páginas focadas em apresentar uma marca, serviço ou produto com clareza e direcionar o usuário para uma
+            ação.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="process-section section">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow red">MEU PROCESSO</p>
+          <h2>IDEIA.<br>ESTRUTURA.<br><span>ENTREGA.</span></h2>
+        </div>
+        <p>Um processo simples para transformar uma necessidade em uma experiência digital pronta para usar.</p>
+      </div>
+
+      <div class="process-flow">
+        <div class="process-step reveal"><span>01</span>
+          <h3>DESCOBERTA</h3>
+          <p>Objetivo, público e escopo. Entendo o contexto do projeto, os desafios da marca e o resultado que a
+            experiência precisa alcançar.</p>
+        </div>
+        <span class="process-arrow" aria-hidden="true"></span>
+        <div class="process-step reveal"><span>02</span>
+          <h3>ESTRUTURA</h3>
+          <p>Conteúdo, fluxo e arquitetura. Organizo as informações para criar uma navegação clara, lógica e fácil de
+            acompanhar.</p>
+        </div>
+        <span class="process-arrow" aria-hidden="true"></span>
+        <div class="process-step reveal"><span>03</span>
+          <h3>DESIGN</h3>
+          <p>Grid, tipografia e interface. Defino a direção visual e transformo a estratégia em uma experiência
+            consistente e memorável.</p>
+        </div>
+        <span class="process-arrow" aria-hidden="true"></span>
+        <div class="process-step reveal"><span>04</span>
+          <h3>DESENVOLVIMENTO</h3>
+          <p>Código, responsividade e performance. Construo a interface com atenção aos detalhes, ao carregamento e ao
+            uso em qualquer tela.</p>
+        </div>
+        <span class="process-arrow" aria-hidden="true"></span>
+        <div class="process-step reveal"><span>05</span>
+          <h3>ENTREGA</h3>
+          <p>Testes, publicação e evolução. Reviso o resultado, coloco o projeto no ar e deixo a base preparada para os
+            próximos passos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">VAMOS TRABALHAR</p>
+        <h2>UMA IDEIA<br><span>EM MENTE?</span></h2>
+        <p>Se você precisa de um site, landing page, interface ou sistema, vamos conversar sobre o projeto.</p>
+        <a class="contact-button" href="mailto:eduardooliveira7.dev@gmail.com">
+          ENTRAR EM CONTATO <span>↗</span>
+        </a>
+      </div>
+
+      <div class="contact-red">
+        <div class="giant-eo">Edudev</div>
+        <div class="contact-details">
+          <a class="contact-social" href="mailto:eduardooliveira7.dev@gmail.com">
+            <i class="devicon-gmail-plain" aria-hidden="true"></i>
+            <div class="contact-social-content"><small>EMAIL</small><strong>eduardooliveira7.dev@gmail.com ↗</strong>
+            </div>
+          </a>
+          <a class="contact-social" href="https://www.linkedin.com/in/eduardo-oliveira-2354ab359/" target="_blank"
+            rel="noopener">
+            <i class="devicon-linkedin-plain" aria-hidden="true"></i>
+            <div class="contact-social-content"><small>LINKEDIN</small><strong>Eduardo Oliveira ↗</strong></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="footer-brand">EduDev<span class="red"></span></span>
+    <small>© 2026 TODOS OS DIREITOS RESERVADOS</small>
+    <a href="https://github.com/Edu-oliveira7" target="_blank" rel="noopener" class="footer-github">
+      <i class="devicon-github-original" aria-hidden="true"></i> GITHUB
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

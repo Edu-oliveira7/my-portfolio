@@ -4,465 +4,314 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eduardo Oliveira — Full Stack Developer</title>
-  <meta name="description" content="Eduardo Oliveira — Desenvolvedor Full Stack Jr.">
-  <link rel="icon" href="img/pc.jpg" type="image/x-icon">
+  <title>Eduardo Oliveira — Desenvolvedor Web Full Stack</title>
+  <meta name="description"
+    content="Desenvolvedor web full stack. Crio landing pages e sistemas web sob medida para o seu negócio conseguir mais clientes.">
+  <meta name="theme-color" content="#FAFAF9">
+  <link rel="icon" href="img/pc.jpg" type="image/jpeg">
+
+  <!-- Open Graph (pré-visualização ao compartilhar o link) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Eduardo Oliveira — Desenvolvedor Web Full Stack">
+  <meta property="og:description"
+    content="Landing pages e sistemas web sob medida para o seu negócio conseguir mais clientes.">
+  <meta property="og:url" content="https://eduardo-oliveira7.vercel.app/">
+  <meta property="og:image" content="https://eduardo-oliveira7.vercel.app/img/foto-sobre.png">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-  <script src="https://cdn.tailwindcss.com"></script>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
   <link rel="stylesheet" href="style.css">
+  <noscript>
+    <style>
+      #loader { display: none; }
+      .hero-item, .reveal { opacity: 1; transform: none; }
+    </style>
+  </noscript>
 </head>
 
 <body>
-  <div id="loader">
+  <a class="skip-link" href="#services">Pular para o conteúdo</a>
+
+  <div id="loader" aria-hidden="true">
     <div class="loader-inner">
-      <div class="loader-mark">Edudev</div>
+      <div class="loader-mark">Eduardo Oliveira</div>
       <div class="loader-rule"><span></span></div>
     </div>
   </div>
 
   <header id="navbar">
-    <nav class="site-nav">
-      <a href="#home" class="brand" aria-label="Eduardo Oliveira">
-        Edudev
-      </a>
+    <nav class="site-nav" aria-label="Principal">
+      <a href="#home" class="brand">Eduardo Oliveira</a>
 
-      <div class="nav-links">
-        <a href="#about" data-section="about">SOBRE</a>
-        <a href="#timeline" data-section="timeline">TRAJETÓRIA</a>
-        <a href="#work" data-section="work">PROJETOS</a>
-        <a href="#services" data-section="services">SERVIÇOS</a>
-        <a href="#process" data-section="process">PROCESSO</a>
-        <a href="#contact" data-section="contact">CONTATO</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#services" data-section="services">Serviços</a>
+          <a href="#work" data-section="work">Projetos</a>
+          <a href="#process" data-section="process">Processo</a>
+          <a href="#about" data-section="about">Sobre</a>
+        </div>
+
+        <a href="#contact" class="nav-cta">Falar comigo</a>
+
+        <button id="menu-btn" class="menu-btn" aria-label="Abrir menu" aria-expanded="false"
+          aria-controls="mobile-menu">
+          <span></span><span></span>
+        </button>
       </div>
-
-      <a href="#contact" class="nav-cta">
-        CONVERSAR <span>↗</span>
-      </a>
-
-      <button id="menu-btn" class="menu-btn" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span>
-      </button>
     </nav>
   </header>
 
   <div id="mobile-menu" aria-hidden="true">
     <div class="mobile-menu-top">
-      <span>Edudev</span>
-      <button id="menu-close" aria-label="Fechar menu">FECHAR ×</button>
+      <span>Eduardo Oliveira</span>
+      <button id="menu-close" aria-label="Fechar menu">Fechar</button>
     </div>
-    <nav>
-      <a href="#home"><span>INÍCIO</span></a>
-      <a href="#about"><span>SOBRE</span></a>
-      <a href="#timeline"><span>TRAJETÓRIA</span></a>
-      <a href="#work"><span>PROJETOS</span></a>
-      <a href="#services"><span>SERVIÇOS</span></a>
-      <a href="#process"><span>PROCESSO</span></a>
-      <a href="#contact"><span>CONTATO</span></a>
+    <nav aria-label="Menu mobile">
+      <a href="#home"><span>Início</span></a>
+      <a href="#services"><span>Serviços</span></a>
+      <a href="#work"><span>Projetos</span></a>
+      <a href="#process"><span>Processo</span></a>
+      <a href="#about"><span>Sobre</span></a>
+      <a href="#contact"><span>Contato</span></a>
     </nav>
   </div>
 
   <main>
-    <!-- HERO -->
+
     <section id="home" class="hero">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <div class="hero-kicker hero-item">FULL STACK DEVELOPER</div>
+      <div class="wrap">
+        <h1 class="hero-title hero-item">Sites que apresentam seu<br class="hero-title-break"> negócio e
+          <em>trazem clientes.</em></h1>
 
-          <h1 class="hero-title">
-            <span class="line-mask"><span>DESIGN</span></span>
-            <span class="line-mask"><span class="red-word">&amp;</span> <span>CODE</span></span>
-          </h1>
+        <p class="hero-description hero-item">Crio landing pages e sistemas web sob medida para apresentar seu negócio
+          com clareza e transformar visitantes em clientes.</p>
 
-          <div class="hero-photo-overlay">
-            <div class="hero-photo-frame" data-parallax="0.035">
-              <img src="img/eduardo.png" alt="Eduardo Oliveira" fetchpriority="high">
-            </div>
-          </div>
-
-          <p class="hero-description hero-item">
-            Crio sites, interfaces e sistemas digitais que transformam ideias em experiências claras, rápidas e
-            profissionais.
-          </p>
-
-          <div class="hero-actions hero-item">
-            <a href="#work" class="hero-btn">VER PROJETOS</a>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="hero-red-block"></div>
-          <div class="hero-vertical-note">Full Stack Developer Jr</div>
-
-          <div class="hero-photo-frame" data-parallax="0.035">
-            <img src="img/eduardo.png" alt="Eduardo Oliveira" fetchpriority="high">
-          </div>
-
-        </div>
-      </div>
-
-      <div class="hero-bottom"></div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="about-section">
-      <div class="about-top reveal">
-        <p class="eyebrow red">SOBRE MIM</p>
-        <h2>DESIGN QUE PENSA.<br><span>CÓDIGO QUE ENTREGA.</span></h2>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-copy reveal">
-          <p class="about-lead">Eu uno <span>design</span>, estrutura e desenvolvimento para criar experiências digitais
-            que fazem sentido.</p>
-          <p>Minha base profissional foi construída no IFRN, onde me formo como Técnico em Informática para Internet.
-            Transformo essa base em páginas, interfaces e sistemas funcionais, responsivos e atentos aos detalhes.</p>
-          <div style="margin-top: 32px;">
-            <a href="#contact" class="hero-btn">VAMOS CONVERSAR</a>
-          </div>
-        </div>
-
-        <div class="about-photo reveal">
-          <div class="photo-red-block"></div>
-          <img src="img/eduardo.png" alt="Eduardo Oliveira" loading="lazy">
-          <span>EDUARDO<br>OLIVEIRA</span>
-        </div>
-
-        <div class="skills reveal">
-          <p class="eyebrow">STACK / TECNOLOGIAS</p>
-          <div class="technology-wall">
-            <div class="technology"><i class="devicon-html5-plain" aria-hidden="true"></i><span>HTML5</span></div>
-            <div class="technology"><i class="devicon-css3-plain" aria-hidden="true"></i><span>CSS3</span></div>
-            <div class="technology"><i class="devicon-javascript-plain" aria-hidden="true"></i><span>JAVASCRIPT</span>
-            </div>
-            <div class="technology"><i class="devicon-react-original" aria-hidden="true"></i><span>REACT</span></div>
-            <div class="technology"><i class="devicon-tailwindcss-original" aria-hidden="true"></i><span>TAILWIND</span>
-            </div>
-            <div class="technology"><i class="devicon-python-plain" aria-hidden="true"></i><span>PYTHON</span></div>
-            <div class="technology"><i class="devicon-django-plain" aria-hidden="true"></i><span>DJANGO</span></div>
-            <div class="technology"><i class="devicon-djangorest-plain" aria-hidden="true"></i><span>DJANGO REST</span>
-            </div>
-            <div class="technology"><i class="devicon-mysql-plain" aria-hidden="true"></i><span>MYSQL</span></div>
-            <div class="technology"><i class="devicon-nextjs-plain" aria-hidden="true"></i><span>NEXT.JS</span></div>
-            <div class="technology"><i class="devicon-git-plain" aria-hidden="true"></i><span>GIT</span></div>
-            <div class="technology"><i class="devicon-github-original" aria-hidden="true"></i><span>GITHUB</span></div>
-            <div class="technology"><i class="devicon-figma-plain" aria-hidden="true"></i><span>FIGMA</span></div>
-          </div>
+        <div class="hero-actions hero-item">
+          <a href="https://www.instagram.com/oliveirawxl/" target="_blank" rel="noopener"
+            class="btn btn-primary">Chamar no Instagram</a>
+          <a href="#work" class="btn-link">Ver projetos</a>
         </div>
       </div>
     </section>
 
-    <!-- STATS -->
-    <section class="stats-section">
-      <div class="stat">
-        <strong data-count="4">0</strong><span>+</span>
-        <small>PROJETOS<br>SELECIONADOS</small>
-      </div>
-      <div class="stat">
-        <strong data-count="13">0</strong><span>+</span>
-        <small>TECNOLOGIAS<br>NO STACK</small>
-      </div>
-      <div class="stat">
-        <strong>2026</strong>
-        <small>FORMAÇÃO NO<br>IFRN</small>
-      </div>
-      <div class="stat stat-note">
-        <span>+</span>
-        <small>DO FIGMA AO <br>CÓDIGO</small>
-      </div>
-    </section>
+    <div class="wrap"><hr class="rule"></div>
 
-    <!-- TIMELINE -->
-    <section id="timeline" class="process-section section">
-      <div class="section-heading reveal">
-        <div>
-          <p class="eyebrow red">COMO CHEGUEI AQUI</p>
-          <h2>DE ESTUDANTE<br>A <span>DEV.</span></h2>
-        </div>
-        <p>Uma linha do tempo curta, mas real — cada etapa levando à próxima.</p>
-      </div>
 
-      <div class="process-grid">
-        <div class="process-item reveal"><span>2022</span>
-          <h3>INÍCIO</h3>
-          <p>Comecei o curso Técnico em Informática para Internet no IFRN, construindo a base em lógica, web e
-            desenvolvimento.</p>
-        </div>
-        <div class="process-item reveal"><span>2024</span>
-          <h3>PRIMEIROS PROJETOS</h3>
-          <p>Saí da teoria para a prática com projetos pessoais como o Mapa da Jornada, aplicando Python e Django em
-            algo real.</p>
-        </div>
-        <div class="process-item reveal"><span>2026</span>
-          <h3>PRIMEIRO FREELANCE</h3>
-          <p>Entreguei meu primeiro projeto para um cliente real: a landing page da Calangos Marketing, com React, Vite
-            e Tailwind CSS.</p>
-        </div>
-        <div class="process-item reveal"><span>HOJE</span>
-          <h3>APROFUNDAMENTO FULL STACK</h3>
-          <p>Sigo evoluindo com Next.js, Django REST e MongoDB, ampliando minha atuação além do frontend.</p>
+    <section id="services" class="section">
+      <div class="wrap">
+        <p class="eyebrow">Serviços</p>
+        <h2 class="section-title">O que eu posso construir para você.</h2>
+
+        <div class="services-grid">
+          <article class="service reveal">
+            <span class="index" aria-hidden="true">01</span>
+            <h3>Landing pages</h3>
+            <p>Páginas que apresentam seu negócio, destacam seus diferenciais e facilitam o contato de novos clientes.</p>
+          </article>
+
+          <article class="service reveal">
+            <span class="index" aria-hidden="true">02</span>
+            <h3>Outros projetos web</h3>
+            <p>Sites e soluções digitais pensados para atender às necessidades do seu negócio e tirar sua ideia do papel.</p>
+          </article>
+
+          <article class="service reveal">
+            <span class="index" aria-hidden="true">03</span>
+            <h3>Sistemas web sob medida</h3>
+            <p>Sistemas que organizam tarefas, reúnem informações e simplificam a rotina do seu negócio.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- WORK -->
-    <section id="work" class="section work-section">
-      <div class="section-heading reveal">
-        <div>
-          <p class="eyebrow red">TRABALHOS SELECIONADOS</p>
-          <h2>PROJETOS<br><span>EM DESTAQUE</span></h2>
-        </div>
-        <a class="hero-btn" href="https://github.com/Edu-oliveira7" target="_blank" rel="noopener">VER GITHUB</a>
-      </div>
 
-      <div class="work-grid">
-        <div class="project reveal">
-          <div class="project-image">
+    <section id="work" class="section work">
+      <div class="wrap">
+        <p class="eyebrow">Projetos selecionados</p>
+        <h2 class="section-title">Trabalho real, resultado visível.</h2>
+
+        <div class="projects">
+          <article class="project reveal">
+            <img src="img/calangos-marketing.png" alt="Site da Calangos Marketing" loading="lazy">
+            <div class="project-body">
+              <p class="project-tags">Landing page · React · Vite · Tailwind CSS</p>
+              <h3>Calangos Marketing</h3>
+              <p class="project-text">Landing page da agência de marketing digital da qual sou co-fundador. Feita para
+                apresentar os serviços com clareza e levar o visitante ao contato. Meu primeiro projeto para cliente
+                real.</p>
+              <div class="project-links">
+                <a href="https://calangos-marketing.vercel.app/" target="_blank" rel="noopener"
+                  class="link-strong">Ver projeto ↗</a>
+                <a href="https://github.com/Edu-oliveira7/calangos-marketing" target="_blank" rel="noopener"
+                  class="link-soft">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project reveal">
             <img src="img/mapa-jornada.png" alt="Mapa da Jornada" loading="lazy">
-            <div class="project-overlay">
-              <div class="project-overlay-actions">
+            <div class="project-body">
+              <p class="project-tags">Sistema web · Python · Django</p>
+              <h3>Mapa da Jornada</h3>
+              <p class="project-text">Sistema para organizar o aprendizado em TI: o usuário cria conta, monta seu perfil
+                e seus projetos e acompanha trilhas e competências. Inclui painel administrativo.</p>
+              <div class="project-links">
                 <a href="http://thierry12.pythonanywhere.com" target="_blank" rel="noopener"
-                  class="project-action-btn">VER PROJETO ↗</a>
+                  class="link-strong">Ver projeto ↗</a>
                 <a href="https://github.com/jeanlucqs/mapadajornada" target="_blank" rel="noopener"
-                  class="project-action-btn github">GITHUB REPO ↗</a>
+                  class="link-soft">GitHub ↗</a>
               </div>
             </div>
-          </div>
-          <div class="project-meta">
-            <div>
-              <span class="project-index">01</span>
-              <h3>MAPA DA JORNADA</h3>
-              <div class="project-card-links">
-                <a href="http://thierry12.pythonanywhere.com" target="_blank" rel="noopener"
-                  class="project-text-link">Deploy ↗</a>
-                <span class="project-link-dot">•</span>
-                <a href="https://github.com/jeanlucqs/mapadajornada" target="_blank" rel="noopener"
-                  class="project-text-link">GitHub ↗</a>
-              </div>
-            </div>
-            <span>PYTHON · DJANGO</span>
-          </div>
-        </div>
+          </article>
 
-        <div class="project reveal">
-          <div class="project-image">
-            <img src="img/projeto-uiux.png" alt="Projeto UI/UX" loading="lazy">
-            <div class="project-overlay">
-              <div class="project-overlay-actions">
+          <article class="project reveal">
+            <img src="img/projeto-uiux.png" alt="Tela de login do SIGEduc" loading="lazy">
+            <div class="project-body">
+              <p class="project-tags">UI/UX · Frontend</p>
+              <h3>Projeto UI/UX · SIGEduc</h3>
+              <p class="project-text">Interface para um sistema de gestão da educação, com tela de login e acesso a
+                boletim online, histórico escolar, mensagens e disciplinas. Foco em navegação simples e hierarquia
+                visual clara.</p>
+              <div class="project-links">
                 <a href="https://edu-oliveira7.github.io/Projeto-UI-UX/" target="_blank" rel="noopener"
-                  class="project-action-btn">VER PROJETO ↗</a>
+                  class="link-strong">Ver projeto ↗</a>
                 <a href="https://github.com/Edu-oliveira7/Projeto-UI-UX" target="_blank" rel="noopener"
-                  class="project-action-btn github">GITHUB REPO ↗</a>
+                  class="link-soft">GitHub ↗</a>
               </div>
             </div>
-          </div>
-          <div class="project-meta">
-            <div>
-              <span class="project-index">02</span>
-              <h3>PROJETO UI/UX</h3>
-              <div class="project-card-links">
-                <a href="https://edu-oliveira7.github.io/Projeto-UI-UX/" target="_blank" rel="noopener"
-                  class="project-text-link">Deploy ↗</a>
-                <span class="project-link-dot">•</span>
-                <a href="https://github.com/Edu-oliveira7/Projeto-UI-UX" target="_blank" rel="noopener"
-                  class="project-text-link">GitHub ↗</a>
-              </div>
-            </div>
-            <span>UI/UX · FRONTEND</span>
-          </div>
-        </div>
+          </article>
 
-        <div class="project reveal">
-          <div class="project-image">
-            <img src="img/projeto-f1.png" alt="Projeto F1" loading="lazy">
-            <div class="project-overlay">
-              <div class="project-overlay-actions">
-                <a href="https://racing-teams.vercel.app/" target="_blank" rel="noopener" class="project-action-btn">VER
-                  PROJETO ↗</a>
-                <a href="https://github.com/Edu-oliveira7/racing-teams" target="_blank" rel="noopener"
-                  class="project-action-btn github">GITHUB REPO ↗</a>
-              </div>
-            </div>
-          </div>
-          <div class="project-meta">
-            <div>
-              <span class="project-index">03</span>
-              <h3>F1 / RACING TEAMS</h3>
-              <div class="project-card-links">
+          <article class="project reveal">
+            <img src="img/projeto-f1.png" alt="Site F1 Temporada 2026" loading="lazy">
+            <div class="project-body">
+              <p class="project-tags">Frontend · React · JavaScript</p>
+              <h3>F1 / Racing Teams</h3>
+              <p class="project-text">Aplicação em React com tema de Fórmula 1 e equipes de corrida, com foco em
+                componentes reutilizáveis e interface dinâmica.</p>
+              <div class="project-links">
                 <a href="https://racing-teams.vercel.app/" target="_blank" rel="noopener"
-                  class="project-text-link">Deploy ↗</a>
-                <span class="project-link-dot">•</span>
+                  class="link-strong">Ver projeto ↗</a>
                 <a href="https://github.com/Edu-oliveira7/racing-teams" target="_blank" rel="noopener"
-                  class="project-text-link">GitHub ↗</a>
+                  class="link-soft">GitHub ↗</a>
               </div>
             </div>
-            <span>REACT · JAVASCRIPT</span>
-          </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="process" class="section">
+      <div class="wrap">
+        <p class="eyebrow">Processo</p>
+        <h2 class="section-title">Simples do primeiro contato ao site no ar.</h2>
+
+        <ol class="process-grid">
+          <li class="reveal">
+            <span class="index" aria-hidden="true">01</span>
+            <h3>Conversa</h3>
+            <p>Entendo seu negócio, seu público e o que o site precisa fazer.</p>
+          </li>
+          <li class="reveal">
+            <span class="index" aria-hidden="true">02</span>
+            <h3>Proposta</h3>
+            <p>Escopo, prazo e investimento combinados antes de começar.</p>
+          </li>
+          <li class="reveal">
+            <span class="index" aria-hidden="true">03</span>
+            <h3>Design e código</h3>
+            <p>Você acompanha o progresso e aprova cada etapa.</p>
+          </li>
+          <li class="reveal">
+            <span class="index" aria-hidden="true">04</span>
+            <h3>Entrega</h3>
+            <p>Site publicado, testado e com suporte para ajustes.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="wrap"><hr class="rule"></div>
+
+
+    <section id="about" class="section">
+      <div class="wrap about-grid">
+        <div class="about-side">
+          <p class="eyebrow">Sobre</p>
+          <h2 class="section-title about-title">Quem vai cuidar do seu projeto.</h2>
+        <img class="about-photo" src="img/eduardo.png" alt="Eduardo Oliveira" loading="lazy">
         </div>
 
+        <div class="about-copy">
+          <p>Sou o Eduardo, desenvolvedor web full stack do Rio Grande do Norte. Técnico em Informática para Internet
+            pelo IFRN, trabalho com React, Next.js e TypeScript no frontend e com Django no backend.</p>
+          <p>Também sou co-fundador da Calangos Marketing, o que me ensinou a pensar em sites como ferramentas de
+            venda, não só como páginas bonitas.</p>
 
-        <div class="project reveal">
-          <div class="project-image">
-            <img src="img/calangos-marketing.png" alt="Calangos Marketing" loading="lazy">
-            <div class="project-overlay">
-              <div class="project-overlay-actions">
-                <a href="https://calangos-marketing.vercel.app/" target="_blank" rel="noopener"
-                  class="project-action-btn">VER PROJETO ↗</a>
-                <a href="https://github.com/Edu-oliveira7/calangos-marketing" target="_blank" rel="noopener"
-                  class="project-action-btn github">GITHUB REPO ↗</a>
-              </div>
-            </div>
+          <div class="stack reveal">
+            <p class="eyebrow stack-title">Stack</p>
+            <ul class="stack-list">
+              <li><i class="devicon-html5-plain colored" aria-hidden="true"></i><span>HTML5</span></li>
+              <li><i class="devicon-css3-plain colored" aria-hidden="true"></i><span>CSS3</span></li>
+              <li><i class="devicon-javascript-plain colored" aria-hidden="true"></i><span>JavaScript</span></li>
+              <li><i class="devicon-typescript-plain colored" aria-hidden="true"></i><span>TypeScript</span></li>
+              <li><i class="devicon-react-original colored" aria-hidden="true"></i><span>React</span></li>
+              <li><i class="devicon-nextjs-plain" aria-hidden="true"></i><span>Next.js</span></li>
+              <li><i class="devicon-tailwindcss-original colored" aria-hidden="true"></i><span>Tailwind CSS</span></li>
+              <li><i class="devicon-python-plain colored" aria-hidden="true"></i><span>Python</span></li>
+              <li><i class="devicon-django-plain" aria-hidden="true"></i><span>Django</span></li>
+              <li><i class="devicon-django-plain" aria-hidden="true"></i><span>Django REST</span></li>
+              <li><i class="devicon-mysql-original colored" aria-hidden="true"></i><span>MySQL</span></li>
+              <li><i class="devicon-git-plain colored" aria-hidden="true"></i><span>Git</span></li>
+              <li><i class="devicon-github-original" aria-hidden="true"></i><span>GitHub</span></li>
+              <li><i class="devicon-figma-plain colored" aria-hidden="true"></i><span>Figma</span></li>
+            </ul>
           </div>
-          <div class="project-meta">
-            <div>
-              <span class="project-index">04</span>
-              <h3>CALANGOS MARKETING</h3>
-              <div class="project-card-links">
-                <a href="https://calangos-marketing.vercel.app/" target="_blank" rel="noopener"
-                  class="project-text-link">Deploy ↗</a>
-                <span class="project-link-dot">•</span>
-                <a href="https://github.com/Edu-oliveira7/calangos-marketing" target="_blank" rel="noopener"
-                  class="project-text-link">GitHub ↗</a>
-              </div>
-            </div>
-            <span>LANDING PAGE · UI/UX</span>
+
+          <div class="about-links">
+            <a href="https://github.com/Edu-oliveira7" target="_blank" rel="noopener" aria-label="GitHub"
+              title="GitHub"><i class="devicon-github-original" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/oliveirawxl/" target="_blank" rel="noopener" aria-label="Instagram"
+              title="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle class="instagram-dot" cx="17.5" cy="6.5" r="1"></circle>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/eduardo-oliveira7/" target="_blank" rel="noopener"
+              aria-label="LinkedIn" title="LinkedIn"><i class="devicon-linkedin-plain" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="services-section">
-      <div class="services-header reveal">
-        <div>
-          <p class="eyebrow red">O QUE EU FAÇO</p>
-          <h2>COMO POSSO<br><span>AJUDAR?</span></h2>
-        </div>
-        <p>Direção visual e desenvolvimento para transformar ideias em experiências digitais claras, funcionais e
-          cuidadas.</p>
-      </div>
 
-      <div class="services-list">
-        <article class="service reveal">
-          <span class="service-number">01</span>
-          <div class="service-title">
-            <h3>WEB DESIGN</h3>
-          </div>
-          <p>Sites institucionais e portfólios com direção visual, hierarquia e experiência pensadas para representar
-            sua marca.</p>
-        </article>
-
-        <article class="service reveal">
-          <span class="service-number">02</span>
-          <div class="service-title">
-            <h3>UI/UX DESIGN</h3>
-          </div>
-          <p>Interfaces intuitivas, organização visual e experiências pensadas para facilitar a jornada do usuário.</p>
-        </article>
-
-        <article class="service reveal">
-          <span class="service-number">03</span>
-          <div class="service-title">
-            <h3>DEVELOPMENT</h3>
-          </div>
-          <p>Transformo o design em interfaces rápidas, responsivas e funcionais usando tecnologias modernas.</p>
-        </article>
-
-        <article class="service reveal">
-          <span class="service-number">04</span>
-          <div class="service-title">
-            <h3>LANDING PAGES</h3>
-          </div>
-          <p>Páginas focadas em apresentar uma marca, serviço ou produto com clareza e direcionar o usuário para uma
-            ação.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section id="process" class="process-section section">
-      <div class="section-heading reveal">
-        <div>
-          <p class="eyebrow red">MEU PROCESSO</p>
-          <h2>IDEIA.<br>ESTRUTURA.<br><span>ENTREGA.</span></h2>
-        </div>
-        <p>Um processo simples para transformar uma necessidade em uma experiência digital pronta para usar.</p>
-      </div>
-
-      <div class="process-flow">
-        <div class="process-step reveal"><span>01</span>
-          <h3>DESCOBERTA</h3>
-          <p>Objetivo, público e escopo. Entendo o contexto do projeto, os desafios da marca e o resultado que a
-            experiência precisa alcançar.</p>
-        </div>
-        <span class="process-arrow" aria-hidden="true"></span>
-        <div class="process-step reveal"><span>02</span>
-          <h3>ESTRUTURA</h3>
-          <p>Conteúdo, fluxo e arquitetura. Organizo as informações para criar uma navegação clara, lógica e fácil de
-            acompanhar.</p>
-        </div>
-        <span class="process-arrow" aria-hidden="true"></span>
-        <div class="process-step reveal"><span>03</span>
-          <h3>DESIGN</h3>
-          <p>Grid, tipografia e interface. Defino a direção visual e transformo a estratégia em uma experiência
-            consistente e memorável.</p>
-        </div>
-        <span class="process-arrow" aria-hidden="true"></span>
-        <div class="process-step reveal"><span>04</span>
-          <h3>DESENVOLVIMENTO</h3>
-          <p>Código, responsividade e performance. Construo a interface com atenção aos detalhes, ao carregamento e ao
-            uso em qualquer tela.</p>
-        </div>
-        <span class="process-arrow" aria-hidden="true"></span>
-        <div class="process-step reveal"><span>05</span>
-          <h3>ENTREGA</h3>
-          <p>Testes, publicação e evolução. Reviso o resultado, coloco o projeto no ar e deixo a base preparada para os
-            próximos passos.</p>
+    <section id="contact" class="contact">
+      <div class="wrap contact-inner">
+        <h2 class="contact-title">Vamos tirar seu projeto do papel?</h2>
+        <p class="contact-text">Me chame no Instagram ou por e-mail e vamos conversar sobre o seu projeto.</p>
+        <div class="contact-actions">
+          <a href="https://www.instagram.com/oliveirawxl/" target="_blank" rel="noopener"
+            class="btn btn-light">Instagram @oliveirawxl</a>
+          <a href="mailto:eduardooliveira7.dev@gmail.com" class="btn btn-outline">eduardooliveira7.dev@gmail.com</a>
+          <a href="https://www.linkedin.com/in/eduardo-oliveira7/" target="_blank" rel="noopener"
+            class="btn btn-outline">LinkedIn</a>
         </div>
       </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact-section">
-      <div class="contact-copy reveal">
-        <p class="eyebrow">VAMOS TRABALHAR</p>
-        <h2>UMA IDEIA<br><span>EM MENTE?</span></h2>
-        <p>Se você precisa de um site, landing page, interface ou sistema, vamos conversar sobre o projeto.</p>
-        <a class="contact-button" href="mailto:eduardooliveira7.dev@gmail.com">
-          ENTRAR EM CONTATO <span>↗</span>
-        </a>
-      </div>
-
-      <div class="contact-red">
-        <div class="giant-eo">Edudev</div>
-        <div class="contact-details">
-          <a class="contact-social" href="mailto:eduardooliveira7.dev@gmail.com">
-            <i class="devicon-gmail-plain" aria-hidden="true"></i>
-            <div class="contact-social-content"><small>EMAIL</small><strong>eduardooliveira7.dev@gmail.com ↗</strong>
-            </div>
-          </a>
-          <a class="contact-social" href="https://www.linkedin.com/in/eduardo-oliveira-2354ab359/" target="_blank"
-            rel="noopener">
-            <i class="devicon-linkedin-plain" aria-hidden="true"></i>
-            <div class="contact-social-content"><small>LINKEDIN</small><strong>Eduardo Oliveira ↗</strong></div>
-          </a>
-        </div>
+      <div class="wrap contact-footer">
+        <span>© 2026 Eduardo Oliveira</span>
+        <span>Desenvolvedor Web Full Stack</span>
       </div>
     </section>
   </main>
-
-  <footer>
-    <span class="footer-brand">EduDev<span class="red"></span></span>
-    <small>© 2026 TODOS OS DIREITOS RESERVADOS</small>
-    <a href="https://github.com/Edu-oliveira7" target="_blank" rel="noopener" class="footer-github">
-      <i class="devicon-github-original" aria-hidden="true"></i> GITHUB
-    </a>
-  </footer>
 
   <script src="script.js"></script>
 </body>

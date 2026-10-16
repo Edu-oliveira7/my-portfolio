@@ -66,17 +66,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Close menu on mobile link click + smooth scroll
+  // Menu mobile: fecha ao clicar num link e rola suavemente até a seção
   if (menu) {
     menu.querySelectorAll("a").forEach((a) => {
       a.addEventListener("click", (event) => {
         const href = a.getAttribute("href");
-        const target = document.querySelector(href);
+        const target = href && href.startsWith("#") ? document.querySelector(href) : null;
 
         if (target) {
           event.preventDefault();
           closeMenu();
-          // Small delay to let menu close animation start
+          // Pequeno atraso para o menu começar a fechar antes da rolagem
           setTimeout(() => {
             target.scrollIntoView({ behavior: reduced ? "auto" : "smooth" });
             history.pushState(null, "", href);
@@ -88,28 +88,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Desktop nav links — smooth scroll
-  document.querySelectorAll(".nav-links a, .brand, .nav-cta").forEach((a) => {
-    a.addEventListener("click", (event) => {
-      const href = a.getAttribute("href");
-      if (!href || !href.startsWith("#")) return;
-      const target = document.querySelector(href);
-
-      if (!target) return;
-
-      event.preventDefault();
-      target.scrollIntoView({ behavior: reduced ? "auto" : "smooth" });
-      history.pushState(null, "", href);
-    });
-  });
-
-  // Also handle any in-page anchor links (hero buttons etc)
+  // Demais links internos (navbar, botões, skip link): rolagem suave
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
-    // Skip if already handled (nav-links, brand, nav-cta, mobile-menu)
-    if (a.closest(".nav-links") || a.closest("#mobile-menu") || a.classList.contains("brand") || a.classList.contains("nav-cta")) return;
+    if (a.closest("#mobile-menu")) return;
 
     a.addEventListener("click", (event) => {
       const href = a.getAttribute("href");
+      if (!href || href === "#") return;
+
       const target = document.querySelector(href);
       if (!target) return;
 
@@ -119,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Close menu on ESC
+  // Fecha o menu com ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeMenu();
@@ -128,29 +114,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ============================================================
-  // NAVBAR — SCROLL EFFECT
+  // NAVBAR — EFEITO AO ROLAR
   // ============================================================
 
   const nav = document.getElementById("navbar");
 
   const updateNav = () => {
-    nav?.classList.toggle(
-      "scrolled",
-      window.scrollY > 30
-    );
+    nav?.classList.toggle("scrolled", window.scrollY > 30);
   };
 
-  window.addEventListener(
-    "scroll",
-    updateNav,
-    { passive: true }
-  );
-
+  window.addEventListener("scroll", updateNav, { passive: true });
   updateNav();
 
 
   // ============================================================
-  // NAVBAR — ACTIVE SECTION TRACKING
+  // NAVBAR — SEÇÃO ATIVA
   // ============================================================
 
   const sectionLinks = document.querySelectorAll(".nav-links a[data-section]");
@@ -168,10 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     sectionLinks.forEach((link) => {
-      link.classList.toggle(
-        "active",
-        link.dataset.section === currentSection
-      );
+      link.classList.toggle("active", link.dataset.section === currentSection);
     });
   };
 
@@ -180,148 +155,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ============================================================
-  // SCROLL REVEAL
+  // REVELAÇÃO AO ROLAR (cards de projeto)
   // ============================================================
 
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+  const revealElements = document.querySelectorAll(".reveal");
 
-          revealObserver.unobserve(
-            entry.target
-          );
-        }
-      });
-    },
-    {
-      threshold: 0.12,
-      rootMargin: "0px 0px -60px 0px"
-    }
-  );
-
-  document
-    .querySelectorAll(".reveal")
-    .forEach((el) => {
-      revealObserver.observe(el);
-    });
-
-
-  // ============================================================
-  // COUNTER
-  // ============================================================
-
-  const counters =
-    document.querySelectorAll("[data-count]");
-
-  const counterObserver =
-    new IntersectionObserver(
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-
-          const el = entry.target;
-          const target = Number(
-            el.dataset.count
-          );
-
-          if (reduced) {
-            el.textContent = target;
-
-            counterObserver.unobserve(el);
-
-            return;
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
           }
-
-          const start = performance.now();
-          const duration = 1100;
-
-          const tick = (now) => {
-            const progress = Math.min(
-              (now - start) / duration,
-              1
-            );
-
-            const eased =
-              1 - Math.pow(1 - progress, 3);
-
-            el.textContent =
-              Math.round(target * eased);
-
-            if (progress < 1) {
-              requestAnimationFrame(tick);
-            }
-          };
-
-          requestAnimationFrame(tick);
-
-          counterObserver.unobserve(el);
         });
       },
       {
-        threshold: 0.65
+        threshold: 0.12,
+        rootMargin: "0px 0px -60px 0px"
       }
     );
 
-  counters.forEach((el) => {
-    counterObserver.observe(el);
-  });
-
-
-  // ============================================================
-  // SUBTLE HERO PARALLAX
-  // ============================================================
-
-  const parallax =
-    document.querySelector("[data-parallax]");
-
-  if (
-    parallax &&
-    !reduced &&
-    window.matchMedia(
-      "(min-width: 901px)"
-    ).matches
-  ) {
-    let ticking = false;
-
-    const updateParallax = () => {
-      const rect =
-        parallax.getBoundingClientRect();
-
-      const viewport =
-        window.innerHeight;
-
-      const amount =
-        (
-          viewport / 2 -
-          (rect.top + rect.height / 2)
-        ) * 0.035;
-
-      parallax.style.transform =
-        `translateY(${amount}px)`;
-
-      ticking = false;
-    };
-
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (!ticking) {
-          requestAnimationFrame(
-            updateParallax
-          );
-
-          ticking = true;
-        }
-      },
-      {
-        passive: true
-      }
-    );
-
-    updateParallax();
+    revealElements.forEach((el) => {
+      revealObserver.observe(el);
+    });
+  } else {
+    revealElements.forEach((el) => {
+      el.classList.add("visible");
+    });
   }
-
-
 });

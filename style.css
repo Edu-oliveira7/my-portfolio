@@ -344,6 +344,11 @@ body.loaded .hero-item:nth-child(3) { transition-delay: .16s; }
   line-height: 1.05;
   letter-spacing: -.015em;
 }
+.section-title em,
+.contact-title em {
+  color: var(--accent);
+  font-style: italic;
+}
 
 
 .services-grid {

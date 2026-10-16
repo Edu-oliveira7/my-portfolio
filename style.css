@@ -635,35 +635,60 @@ body.loaded .hero-item:nth-child(3) { transition-delay: .16s; }
     --nav-h: 68px;
   }
 
+  html {
+    scroll-padding-top: 0;
+    scroll-snap-type: y mandatory;
+  }
+
+  main > section {
+    min-height: 100vh;
+    min-height: 100svh;
+    scroll-snap-align: start;
+  }
+
   .nav-links { display: none; }
   .menu-btn { display: block; margin-right: -11px; }
   .nav-right { gap: 8px; }
+  #mobile-menu nav a { font-size: 34px; }
+  .eyebrow,
+  .index { font-size: 14px; }
 
   .hero { padding: calc(var(--nav-h) + 24px) 0 72px; }
-  .hero-description { font-size: 18px; margin-top: 32px; }
+  .hero-description { font-size: 20px; margin-top: 32px; }
   .hero-actions { margin-top: 40px; }
+  .hero-actions .btn,
+  .hero-actions .btn-link { font-size: 17px; }
 
   .section { padding: 64px 0; }
   .section-title { margin-bottom: 40px; }
 
   .service { padding-right: 0; }
+  .service p { font-size: 18px; }
 
   .project { padding: 36px 0; gap: 24px; }
   .project h3 { font-size: 38px; }
+  .project-tags { font-size: 14px; }
+  .project-text { font-size: 18px; }
+  .project-links { font-size: 16px; }
+
+  .process-grid h3 { font-size: 22px; }
+  .process-grid p { font-size: 17px; }
 
   .about-grid { gap: 40px; }
-  .about-copy { font-size: 17px; }
+  .about-copy { font-size: 19px; }
   .about-photo {
     width: min(220px, 100%);
     margin: 32px auto 0;
     aspect-ratio: 1;
     border-radius: 50%;
   }
-  .stack-list { gap: 8px; }
+  .stack-list { gap: 8px; font-size: 15px; }
   .stack-list li { padding: 9px 12px; }
 
   .contact-inner { padding-top: 80px; padding-bottom: 80px; }
-  .contact-actions .btn { padding: 16px 22px; font-size: 15px; }
+  .contact-text { font-size: 20px; }
+  .contact-actions .btn { padding: 16px 22px; font-size: 17px; }
+  .contact-footer { font-size: 14px; }
 }
 
 @media (max-width: 400px) {
